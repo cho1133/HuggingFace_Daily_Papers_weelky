@@ -1,0 +1,12 @@
+[project]
+name = "hg-daily"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dotenv>=0.9.9",
+    "lxml>=6.0.0",
+    "openai>=1.99.9",
+    "requests>=2.32.4",
+]
