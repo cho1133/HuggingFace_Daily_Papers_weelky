@@ -26,7 +26,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: '3.12'
 
       # 3. uv 설치 (공식 Action 사용)
       - name: Set up uv
@@ -34,13 +34,14 @@ jobs:
 
       # 4. uv를 사용하여 라이브러리 설치
       - name: Install dependencies with uv
-        run: uv pip install -r requirements.txt
+        # [수정됨] --system 옵션을 추가하여 가상 환경 없이 설치
+        run: uv pip install --system -r requirements.txt
 
       # 5. uv run으로 파이썬 스크립트 실행
       - name: Run the scraper script with uv
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: uv run python scraper_with_translation.py # 파일이름을 실제 파일 이름으로 변경하세요.
+        run: uv run python your_script_name.py # "your_script_name.py"을 실제 파일 이름으로 변경하세요.
 
       # 6. 변경된 결과(생성된 .txt 파일)를 리포지토리에 커밋
       - name: Commit and push if it changed
