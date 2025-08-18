@@ -41,7 +41,7 @@ jobs:
       - name: Run the scraper script with uv
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: uv run python your_script_name.py # "your_script_name.py"을 실제 파일 이름으로 변경하세요.
+        run: uv run python scraper_with_translation.py # "your_script_name.py"을 실제 파일 이름으로 변경하세요.
 
       # 6. 변경된 결과(생성된 .txt 파일)를 리포지토리에 커밋
       - name: Commit and push if it changed
