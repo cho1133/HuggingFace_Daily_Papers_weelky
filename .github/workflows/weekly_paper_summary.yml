@@ -16,6 +16,10 @@ jobs:
     # 작업이 실행될 가상 환경
     runs-on: ubuntu-latest
 
+    # [수정됨] 작업에 콘텐츠 쓰기 권한 부여
+    permissions:
+      contents: write
+
     # 작업의 단계(Step)들
     steps:
       # 1. 리포지토리의 코드를 가상 환경으로 가져옴
@@ -26,7 +30,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.12'
+          python-version: '3.10'
 
       # 3. uv 설치 (공식 Action 사용)
       - name: Set up uv
@@ -34,7 +38,7 @@ jobs:
 
       # 4. uv를 사용하여 라이브러리 설치
       - name: Install dependencies with uv
-        # [수정됨] --system 옵션을 추가하여 가상 환경 없이 설치
+        # 가상 환경 없이 시스템에 바로 설치
         run: uv pip install --system -r requirements.txt
 
       # 5. uv run으로 파이썬 스크립트 실행
