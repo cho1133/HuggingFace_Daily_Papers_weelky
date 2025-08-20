@@ -2,7 +2,7 @@ import os
 import time
 import requests
 from lxml import html
-from openai import OpenAI
+from openai import OpenAI, APIConnectionError
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
 
@@ -44,7 +44,7 @@ def translate_text_with_openai(client, text):
 
     for attempt in range(max_retries):
         try:
-            # 사용자가 요청한 gpt-4o 모델 및 프롬프트로 변경
+
             response = client.chat.completions.create(
                 model="gpt-4o",
                 messages=[
@@ -52,11 +52,11 @@ def translate_text_with_openai(client, text):
                     {"role": "user", "content": f"Translate the following English text to Korean:\n\n{text}"}
                 ],
                 temperature=0.1,
-                timeout=20, # [수정됨] 응답 대기시간(초) 설정 추가
+                timeout=20, # 응답 대기시간(초) 설정 추가
             )
             return response.choices[0].message.content.strip()
-        # 구체적인 네트워크 예외를 잡도록 변경
-        except (requests.exceptions.ConnectionError, OpenAI.APIConnectionError) as e:
+
+        except (requests.exceptions.ConnectionError, APIConnectionError) as e:
             print(f"   > 번역 시도 {attempt + 1}/{max_retries} 실패: 네트워크 오류. {delay}초 후 재시도합니다.")
             time.sleep(delay)
             delay *= 2  # 다음 재시도 시 대기 시간 2배 증가
