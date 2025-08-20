@@ -18,8 +18,8 @@ parameters) and a compact version, GLM-4.5-Air (106B parameters), to advance
 research in reasoning and agentic AI systems. Code, models, and more
 information are available at https://github.com/zai-org/GLM-4.5.
 
---- 1. 항목 처리 실패 ---
-항목 처리 중 오류 발생: type object 'OpenAI' has no attribute 'APIConnectionError'
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
 
 --- 2. We-Math 2.0: A Versatile MathBook System for Incentivizing Visual
   Mathematical Reasoning ---
@@ -52,8 +52,8 @@ MathBook-RL performs competitively with existing baselines on four widely-used
 benchmarks and achieves strong results on MathBookEval, suggesting promising
 generalization in mathematical reasoning.
 
---- 2. 항목 처리 실패 ---
-항목 처리 중 오류 발생: type object 'OpenAI' has no attribute 'APIConnectionError'
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
 
 --- 3. NextStep-1: Toward Autoregressive Image Generation with Continuous
   Tokens at Scale ---
@@ -73,8 +73,8 @@ our method shows strong performance in image editing, highlighting the power
 and versatility of our unified approach. To facilitate open research, we will
 release our code and models to the community.
 
---- 3. 항목 처리 실패 ---
-항목 처리 중 오류 발생: type object 'OpenAI' has no attribute 'APIConnectionError'
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
 
 --- 4. ReasonRank: Empowering Passage Ranking with Strong Reasoning Ability ---
 Link: https://huggingface.co/papers/2508.07050
@@ -105,8 +105,8 @@ performance 40.6 on the BRIGHT
 leaderboard\footnote{https://brightbenchmark.github.io/.} Our codes are
 available at https://github.com/8421BCD/ReasonRank.
 
---- 4. 항목 처리 실패 ---
-항목 처리 중 오류 발생: type object 'OpenAI' has no attribute 'APIConnectionError'
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
 
 --- 5. WebWatcher: Breaking New Frontier of Vision-Language Deep Research Agent ---
 Link: https://huggingface.co/papers/2508.05748
@@ -131,8 +131,8 @@ baseline, RAG workflow and open-source agents in four challenging VQA
 benchmarks, which paves the way for solving complex multimodal
 information-seeking tasks.
 
---- 5. 항목 처리 실패 ---
-항목 처리 중 오류 발생: type object 'OpenAI' has no attribute 'APIConnectionError'
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
 
 --- 6. WideSearch: Benchmarking Agentic Broad Info-Seeking ---
 Link: https://huggingface.co/papers/2508.07999
@@ -162,8 +162,8 @@ information seeking, underscoring urgent areas for future research and
 development in agentic search. Our dataset, evaluation pipeline, and benchmark
 results have been publicly released at https://widesearch-seed.github.io/
 
---- 6. 항목 처리 실패 ---
-항목 처리 중 오류 발생: type object 'OpenAI' has no attribute 'APIConnectionError'
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
 
 --- 7. A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm
   Bridging Foundation Models and Lifelong Agentic Systems ---
@@ -197,8 +197,8 @@ practitioners with a systematic understanding of self-evolving AI agents,
 laying the foundation for the development of more adaptive, autonomous, and
 lifelong agentic systems.
 
---- 7. 항목 처리 실패 ---
-항목 처리 중 오류 발생: type object 'OpenAI' has no attribute 'APIConnectionError'
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
 
 --- 8. Matrix-3D: Omnidirectional Explorable 3D World Generation ---
 Link: https://huggingface.co/papers/2508.08086
@@ -224,8 +224,8 @@ demonstrate that our proposed framework achieves state-of-the-art performance
 in panoramic video generation and 3D world generation. See more in
 https://matrix-3d.github.io.
 
---- 8. 항목 처리 실패 ---
-항목 처리 중 오류 발생: type object 'OpenAI' has no attribute 'APIConnectionError'
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
 
 --- 9. PRELUDE: A Benchmark Designed to Require Global Comprehension and
   Reasoning over Long Contexts ---
@@ -247,8 +247,8 @@ answers with flawed reasoning, leading to an over 30% gap in reasoning accuracy
 compared to humans. These findings underscore the substantial room for
 improvement in long-context understanding and reasoning.
 
---- 9. 항목 처리 실패 ---
-항목 처리 중 오류 발생: type object 'OpenAI' has no attribute 'APIConnectionError'
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
 
 --- 10. Story2Board: A Training-Free Approach for Expressive Storyboard
   Generation ---
@@ -275,6 +275,6 @@ Our qualitative and quantitative results, as well as a user study, show that
 Story2Board produces more dynamic, coherent, and narratively engaging
 storyboards than existing baselines.
 
---- 10. 항목 처리 실패 ---
-항목 처리 중 오류 발생: type object 'OpenAI' has no attribute 'APIConnectionError'
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
 
