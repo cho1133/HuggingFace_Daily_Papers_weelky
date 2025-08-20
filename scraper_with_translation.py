@@ -1,4 +1,5 @@
 import os
+import time
 import requests
 from lxml import html
 from openai import OpenAI
@@ -31,24 +32,39 @@ def get_previous_week_info():
 def translate_text_with_openai(client, text):
     """
     OpenAI API를 사용하여 주어진 텍스트를 한글로 번역합니다.
+    연결 오류 시 몇 차례 재시도하는 로직이 포함되어 있습니다.
     """
     if not text or not text.strip():
         return "번역할 텍스트가 없습니다."
     if not client:
         return "OpenAI 클라이언트가 설정되지 않았습니다."
-        
-    try:
-        response = client.chat.completions.create(
-            model="gpt-4o",
-            messages=[
-                {"role": "system", "content": "You are a technical AI researcher. Please translate English academic papers into Korean. Please add a line break for each sentence."},
-                {"role": "user", "content": f"Translate the following English text to Korean:\n\n{text}"}
-            ],
-            temperature=0.3,
-        )
-        return response.choices[0].message.content.strip()
-    except Exception as e:
-        return f"번역 중 오류 발생: {e}"
+    
+    max_retries = 3
+    delay = 2  # 2초부터 시작
+
+    for attempt in range(max_retries):
+        try:
+            # 사용자가 요청한 gpt-4o 모델 및 프롬프트로 변경
+            response = client.chat.completions.create(
+                model="gpt-4o",
+                messages=[
+                    {"role": "system", "content": "You are a technical AI researcher. Please translate English academic papers into Korean. Please add a line break for each sentence."},
+                    {"role": "user", "content": f"Translate the following English text to Korean:\n\n{text}"}
+                ],
+                temperature=0.1,
+                timeout=20, # [수정됨] 응답 대기시간(초) 설정 추가
+            )
+            return response.choices[0].message.content.strip()
+        # 구체적인 네트워크 예외를 잡도록 변경
+        except (requests.exceptions.ConnectionError, OpenAI.APIConnectionError) as e:
+            print(f"   > 번역 시도 {attempt + 1}/{max_retries} 실패: 네트워크 오류. {delay}초 후 재시도합니다.")
+            time.sleep(delay)
+            delay *= 2  # 다음 재시도 시 대기 시간 2배 증가
+        except Exception as e:
+            return f"번역 중 예상치 못한 오류 발생: {e}"
+
+    return f"번역 중 오류 발생: {max_retries}번의 시도 후에도 네트워크 연결에 실패했습니다."
+
 
 def scrape_and_translate_papers():
     """
@@ -57,7 +73,7 @@ def scrape_and_translate_papers():
     """
     openai_client = setup_api()
     if not openai_client:
-        return # API 키가 없으면 실행 중단
+        return
 
     year, week = get_previous_week_info()
     week_str = f"{year}-W{week:02d}"
