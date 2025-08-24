@@ -76,7 +76,33 @@ release our code and models to the community.
 ## 초록 (Korean)
 번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
 
---- 4. ReasonRank: Empowering Passage Ranking with Strong Reasoning Ability ---
+--- 4. WebWatcher: Breaking New Frontier of Vision-Language Deep Research Agent ---
+Link: https://huggingface.co/papers/2508.05748
+
+## Abstract (Original)
+Web agents such as Deep Research have demonstrated superhuman cognitive
+abilities, capable of solving highly challenging information-seeking problems.
+However, most research remains primarily text-centric, overlooking visual
+information in the real world. This makes multimodal Deep Research highly
+challenging, as such agents require much stronger reasoning abilities in
+perception, logic, knowledge, and the use of more sophisticated tools compared
+to text-based agents. To address this limitation, we introduce WebWatcher, a
+multi-modal Agent for Deep Research equipped with enhanced visual-language
+reasoning capabilities. It leverages high-quality synthetic multimodal
+trajectories for efficient cold start training, utilizes various tools for deep
+reasoning, and further enhances generalization through reinforcement learning.
+To better evaluate the capabilities of multimodal agents, we propose
+BrowseComp-VL, a benchmark with BrowseComp-style that requires complex
+information retrieval involving both visual and textual information.
+Experimental results show that WebWatcher significantly outperforms proprietary
+baseline, RAG workflow and open-source agents in four challenging VQA
+benchmarks, which paves the way for solving complex multimodal
+information-seeking tasks.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 5. ReasonRank: Empowering Passage Ranking with Strong Reasoning Ability ---
 Link: https://huggingface.co/papers/2508.07050
 
 ## Abstract (Original)
@@ -104,32 +130,6 @@ further experiments, our ReasonRank has achieved state-of-the-art (SOTA)
 performance 40.6 on the BRIGHT
 leaderboard\footnote{https://brightbenchmark.github.io/.} Our codes are
 available at https://github.com/8421BCD/ReasonRank.
-
-## 초록 (Korean)
-번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
-
---- 5. WebWatcher: Breaking New Frontier of Vision-Language Deep Research Agent ---
-Link: https://huggingface.co/papers/2508.05748
-
-## Abstract (Original)
-Web agents such as Deep Research have demonstrated superhuman cognitive
-abilities, capable of solving highly challenging information-seeking problems.
-However, most research remains primarily text-centric, overlooking visual
-information in the real world. This makes multimodal Deep Research highly
-challenging, as such agents require much stronger reasoning abilities in
-perception, logic, knowledge, and the use of more sophisticated tools compared
-to text-based agents. To address this limitation, we introduce WebWatcher, a
-multi-modal Agent for Deep Research equipped with enhanced visual-language
-reasoning capabilities. It leverages high-quality synthetic multimodal
-trajectories for efficient cold start training, utilizes various tools for deep
-reasoning, and further enhances generalization through reinforcement learning.
-To better evaluate the capabilities of multimodal agents, we propose
-BrowseComp-VL, a benchmark with BrowseComp-style that requires complex
-information retrieval involving both visual and textual information.
-Experimental results show that WebWatcher significantly outperforms proprietary
-baseline, RAG workflow and open-source agents in four challenging VQA
-benchmarks, which paves the way for solving complex multimodal
-information-seeking tasks.
 
 ## 초록 (Korean)
 번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
