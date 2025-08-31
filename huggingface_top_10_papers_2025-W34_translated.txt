@@ -1,0 +1,299 @@
+Hugging Face 주간 인기 논문 Top 10 (2025-W34) - 번역본
+출처: https://huggingface.co/papers/week/2025-W34
+
+--- 1. Intern-S1: A Scientific Multimodal Foundation Model ---
+Link: https://huggingface.co/papers/2508.15763
+
+## Abstract (Original)
+In recent years, a plethora of open-source foundation models have emerged,
+achieving remarkable progress in some widely attended fields, with performance
+being quite close to that of closed-source models. However, in high-value but
+more challenging scientific professional fields, either the fields still rely
+on expert models, or the progress of general foundation models lags
+significantly compared to those in popular areas, far from sufficient for
+transforming scientific research and leaving substantial gap between
+open-source models and closed-source models in these scientific domains. To
+mitigate this gap and explore a step further toward Artificial General
+Intelligence (AGI), we introduce Intern-S1, a specialized generalist equipped
+with general understanding and reasoning capabilities with expertise to analyze
+multiple science modal data. Intern-S1 is a multimodal Mixture-of-Experts (MoE)
+model with 28 billion activated parameters and 241 billion total parameters,
+continually pre-trained on 5T tokens, including over 2.5T tokens from
+scientific domains. In the post-training stage, Intern-S1 undergoes offline and
+then online reinforcement learning (RL) in InternBootCamp, where we propose
+Mixture-of-Rewards (MoR) to synergize the RL training on more than 1000 tasks
+simultaneously. Through integrated innovations in algorithms, data, and
+training systems, Intern-S1 achieved top-tier performance in online RL
+training.On comprehensive evaluation benchmarks, Intern-S1 demonstrates
+competitive performance on general reasoning tasks among open-source models and
+significantly outperforms open-source models in scientific domains, surpassing
+closed-source state-of-the-art models in professional tasks, such as molecular
+synthesis planning, reaction condition prediction, predicting thermodynamic
+stabilities for crystals. Our models are available at
+https://huggingface.co/internlm/Intern-S1.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 2. DINOv3 ---
+Link: https://huggingface.co/papers/2508.10104
+
+## Abstract (Original)
+Self-supervised learning holds the promise of eliminating the need for manual
+data annotation, enabling models to scale effortlessly to massive datasets and
+larger architectures. By not being tailored to specific tasks or domains, this
+training paradigm has the potential to learn visual representations from
+diverse sources, ranging from natural to aerial images -- using a single
+algorithm. This technical report introduces DINOv3, a major milestone toward
+realizing this vision by leveraging simple yet effective strategies. First, we
+leverage the benefit of scaling both dataset and model size by careful data
+preparation, design, and optimization. Second, we introduce a new method called
+Gram anchoring, which effectively addresses the known yet unsolved issue of
+dense feature maps degrading during long training schedules. Finally, we apply
+post-hoc strategies that further enhance our models' flexibility with respect
+to resolution, model size, and alignment with text. As a result, we present a
+versatile vision foundation model that outperforms the specialized state of the
+art across a broad range of settings, without fine-tuning. DINOv3 produces
+high-quality dense features that achieve outstanding performance on various
+vision tasks, significantly surpassing previous self- and weakly-supervised
+foundation models. We also share the DINOv3 suite of vision models, designed to
+advance the state of the art on a wide spectrum of tasks and data by providing
+scalable solutions for diverse resource constraints and deployment scenarios.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 3. Chain-of-Agents: End-to-End Agent Foundation Models via Multi-Agent
+  Distillation and Agentic RL ---
+Link: https://huggingface.co/papers/2508.13167
+
+## Abstract (Original)
+Recent advances in large language models (LLMs) and multi-agent systems have
+demonstrated remarkable capabilities in complex problem-solving tasks such as
+deep research, vibe coding, and mathematical reasoning. However, most existing
+multi-agent systems are built upon manual prompt/workflow engineering with
+sophisticated agent frameworks, making them computationally inefficient, less
+capable, and can not benefit from data-centric learning. In this work, we
+introduce Chain-of-Agents (CoA), a novel paradigm of LLM reasoning that enables
+native end-to-end complex problem-solving in the same way as a multi-agent
+system (i.e., multi-turn problem solving with multiple tools and multiple
+agents) within one model. In chain-of-agents problem-solving, the model
+dynamically activates different tool agents and role-playing agents to simulate
+multi-agent collaboration in an end-to-end fashion. To elicit end-to-end
+chain-of-agents problem-solving abilities in LLMs, we introduce a multi-agent
+distillation framework to distill state-of-the-art multi-agent systems into
+chain-of-agents trajectories for agentic supervised fine-tuning. We then use
+agentic reinforcement learning on verifiable agentic tasks to further improve
+the models' capabilities on chain-of-agents problem solving. We call the
+resulting models Agent Foundation Models (AFMs). Our empirical studies
+demonstrate that AFM establishes new state-of-the-art performance across
+diverse benchmarks in both web agent and code agent settings. We make the
+entire research, including the model weights, code for training and evaluation,
+and the training data, fully open-sourced, which offers a solid starting point
+for future research on agent models and agentic RL.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 4. Ovis2.5 Technical Report ---
+Link: https://huggingface.co/papers/2508.11737
+
+## Abstract (Original)
+We present Ovis2.5, a successor to Ovis2 designed for native-resolution
+visual perception and strong multimodal reasoning. Ovis2.5 integrates a
+native-resolution vision transformer that processes images at their native,
+variable resolutions, avoiding the degradation from fixed-resolution tiling and
+preserving both fine detail and global layout -- crucial for visually dense
+content like complex charts. To strengthen reasoning, we train the model to
+move beyond linear chain-of-thought and perform reflection -- including
+self-checking and revision. This advanced capability is exposed as an optional
+"thinking mode" at inference time, allowing users to trade latency for enhanced
+accuracy on difficult inputs. The model is trained via a comprehensive
+five-phase curriculum that progressively builds its skills. The process begins
+with foundational visual and multimodal pretraining, advances through
+large-scale instruction tuning, and culminates in alignment and reasoning
+enhancement using DPO and GRPO. To scale these upgrades efficiently, we employ
+multimodal data packing and hybrid parallelism, yielding a significant
+end-to-end speedup. We release two open-source models: Ovis2.5-9B and
+Ovis2.5-2B. The latter continues the "small model, big performance" philosophy
+of Ovis2, making it ideal for resource-constrained, on-device scenarios. On the
+OpenCompass multimodal leaderboard, Ovis2.5-9B averages 78.3, marking a
+substantial improvement over its predecessor, Ovis2-8B, and achieving
+state-of-the-art results among open-source MLLMs in the sub-40B parameter
+range; Ovis2.5-2B scores 73.9, establishing SOTA for its size. Beyond aggregate
+scores, Ovis2.5 achieves leading results on STEM benchmarks, exhibits strong
+capabilities on grounding and video tasks, and achieves open-source SOTA at its
+scale for complex chart analysis.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 5. SSRL: Self-Search Reinforcement Learning ---
+Link: https://huggingface.co/papers/2508.10874
+
+## Abstract (Original)
+We investigate the potential of large language models (LLMs) to serve as
+efficient simulators for agentic search tasks in reinforcement learning (RL),
+thereby reducing dependence on costly interactions with external search
+engines. To this end, we first quantify the intrinsic search capability of LLMs
+via structured prompting and repeated sampling, which we term Self-Search. Our
+results reveal that LLMs exhibit strong scaling behavior with respect to the
+inference budget, achieving high pass@k on question-answering benchmarks,
+including the challenging BrowseComp task. Building on these observations, we
+introduce Self-Search RL (SSRL), which enhances LLMs' Self-Search capability
+through format-based and rule-based rewards. SSRL enables models to iteratively
+refine their knowledge utilization internally, without requiring access to
+external tools. Empirical evaluations demonstrate that SSRL-trained policy
+models provide a cost-effective and stable environment for search-driven RL
+training, reducing reliance on external search engines and facilitating robust
+sim-to-real transfer. We draw the following conclusions: 1) LLMs possess world
+knowledge that can be effectively elicited to achieve high performance; 2) SSRL
+demonstrates the potential of leveraging internal knowledge to reduce
+hallucination; 3) SSRL-trained models integrate seamlessly with external search
+engines without additional effort. Our findings highlight the potential of LLMs
+to support more scalable RL agent training.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 6. DuPO: Enabling Reliable LLM Self-Verification via Dual Preference
+  Optimization ---
+Link: https://huggingface.co/papers/2508.14460
+
+## Abstract (Original)
+We present DuPO, a dual learning-based preference optimization framework that
+generates annotation-free feedback via a generalized duality. DuPO addresses
+two key limitations: Reinforcement Learning with Verifiable Rewards (RLVR)'s
+reliance on costly labels and applicability restricted to verifiable tasks, and
+traditional dual learning's restriction to strictly dual task pairs (e.g.,
+translation and back-translation). Specifically, DuPO decomposes a primal
+task's input into known and unknown components, then constructs its dual task
+to reconstruct the unknown part using the primal output and known information
+(e.g., reversing math solutions to recover hidden variables), broadening
+applicability to non-invertible tasks. The quality of this reconstruction
+serves as a self-supervised reward to optimize the primal task, synergizing
+with LLMs' ability to instantiate both tasks via a single model. Empirically,
+DuPO achieves substantial gains across diverse tasks: it enhances the average
+translation quality by 2.13 COMET over 756 directions, boosts the mathematical
+reasoning accuracy by an average of 6.4 points on three challenge benchmarks,
+and enhances performance by 9.3 points as an inference-time reranker (trading
+computation for accuracy). These results position DuPO as a scalable, general,
+and annotation-free paradigm for LLM optimization.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 7. Deep Think with Confidence ---
+Link: https://huggingface.co/papers/2508.15260
+
+## Abstract (Original)
+Large Language Models (LLMs) have shown great potential in reasoning tasks
+through test-time scaling methods like self-consistency with majority voting.
+However, this approach often leads to diminishing returns in accuracy and high
+computational overhead. To address these challenges, we introduce Deep Think
+with Confidence (DeepConf), a simple yet powerful method that enhances both
+reasoning efficiency and performance at test time. DeepConf leverages
+model-internal confidence signals to dynamically filter out low-quality
+reasoning traces during or after generation. It requires no additional model
+training or hyperparameter tuning and can be seamlessly integrated into
+existing serving frameworks. We evaluate DeepConf across a variety of reasoning
+tasks and the latest open-source models, including Qwen 3 and GPT-OSS series.
+Notably, on challenging benchmarks such as AIME 2025, DeepConf@512 achieves up
+to 99.9% accuracy and reduces generated tokens by up to 84.7% compared to full
+parallel thinking.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 8. Thyme: Think Beyond Images ---
+Link: https://huggingface.co/papers/2508.11630
+
+## Abstract (Original)
+Following OpenAI's introduction of the ``thinking with images'' concept,
+recent efforts have explored stimulating the use of visual information in the
+reasoning process to enhance model performance in perception and reasoning
+tasks. However, to the best of our knowledge, no open-source work currently
+offers a feature set as rich as proprietary models (O3), which can perform
+diverse image manipulations and simultaneously enhance logical reasoning
+capabilities through code. In this paper, we make a preliminary attempt in this
+direction by introducing Thyme (Think Beyond Images), a novel paradigm for
+enabling MLLMs to transcend existing ``think with images'' approaches by
+autonomously generating and executing diverse image processing and
+computational operations via executable code. This approach not only
+facilitates a rich, on-the-fly set of image manipulations (e.g., cropping,
+rotation, contrast enhancement) but also allows for mathematical computations,
+all while maintaining high autonomy in deciding when and how to apply these
+operations. We activate this capability through a two-stage training strategy:
+an initial SFT on a curated dataset of 500K samples to teach code generation,
+followed by a RL phase to refine decision-making. For the RL stage, we manually
+collect and design high-resolution question-answer pairs to increase the
+learning difficulty, and we propose GRPO-ATS (Group Relative Policy
+Optimization with Adaptive Temperature Sampling), an algorithm that applies
+distinct temperatures to text and code generation to balance reasoning
+exploration with code execution precision. We conduct extensive experimental
+analysis and ablation studies. Comprehensive evaluations on nearly 20
+benchmarks show that Thyme yields significant and consistent performance gains,
+particularly in challenging high-resolution perception and complex reasoning
+tasks.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 9. ComoRAG: A Cognitive-Inspired Memory-Organized RAG for Stateful Long
+  Narrative Reasoning ---
+Link: https://huggingface.co/papers/2508.10419
+
+## Abstract (Original)
+Narrative comprehension on long stories and novels has been a challenging
+domain attributed to their intricate plotlines and entangled, often evolving
+relations among characters and entities. Given the LLM's diminished reasoning
+over extended context and high computational cost, retrieval-based approaches
+remain a pivotal role in practice. However, traditional RAG methods can fall
+short due to their stateless, single-step retrieval process, which often
+overlooks the dynamic nature of capturing interconnected relations within
+long-range context. In this work, we propose ComoRAG, holding the principle
+that narrative reasoning is not a one-shot process, but a dynamic, evolving
+interplay between new evidence acquisition and past knowledge consolidation,
+analogous to human cognition when reasoning with memory-related signals in the
+brain. Specifically, when encountering a reasoning impasse, ComoRAG undergoes
+iterative reasoning cycles while interacting with a dynamic memory workspace.
+In each cycle, it generates probing queries to devise new exploratory paths,
+then integrates the retrieved evidence of new aspects into a global memory
+pool, thereby supporting the emergence of a coherent context for the query
+resolution. Across four challenging long-context narrative benchmarks (200K+
+tokens), ComoRAG outperforms strong RAG baselines with consistent relative
+gains up to 11% compared to the strongest baseline. Further analysis reveals
+that ComoRAG is particularly advantageous for complex queries requiring global
+comprehension, offering a principled, cognitively motivated paradigm for
+retrieval-based long context comprehension towards stateful reasoning. Our code
+is publicly released at https://github.com/EternityJune25/ComoRAG
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 10. MeshCoder: LLM-Powered Structured Mesh Code Generation from Point Clouds ---
+Link: https://huggingface.co/papers/2508.14879
+
+## Abstract (Original)
+Reconstructing 3D objects into editable programs is pivotal for applications
+like reverse engineering and shape editing. However, existing methods often
+rely on limited domain-specific languages (DSLs) and small-scale datasets,
+restricting their ability to model complex geometries and structures. To
+address these challenges, we introduce MeshCoder, a novel framework that
+reconstructs complex 3D objects from point clouds into editable Blender Python
+scripts. We develop a comprehensive set of expressive Blender Python APIs
+capable of synthesizing intricate geometries. Leveraging these APIs, we
+construct a large-scale paired object-code dataset, where the code for each
+object is decomposed into distinct semantic parts. Subsequently, we train a
+multimodal large language model (LLM) that translates 3D point cloud into
+executable Blender Python scripts. Our approach not only achieves superior
+performance in shape-to-code reconstruction tasks but also facilitates
+intuitive geometric and topological editing through convenient code
+modifications. Furthermore, our code-based representation enhances the
+reasoning capabilities of LLMs in 3D shape understanding tasks. Together, these
+contributions establish MeshCoder as a powerful and flexible solution for
+programmatic 3D shape reconstruction and understanding.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
