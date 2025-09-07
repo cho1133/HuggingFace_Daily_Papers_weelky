@@ -1,0 +1,282 @@
+Hugging Face 주간 인기 논문 Top 10 (2025-W35) - 번역본
+출처: https://huggingface.co/papers/week/2025-W35
+
+--- 1. InternVL3.5: Advancing Open-Source Multimodal Models in Versatility,
+  Reasoning, and Efficiency ---
+Link: https://huggingface.co/papers/2508.18265
+
+## Abstract (Original)
+We introduce InternVL 3.5, a new family of open-source multimodal models that
+significantly advances versatility, reasoning capability, and inference
+efficiency along the InternVL series. A key innovation is the Cascade
+Reinforcement Learning (Cascade RL) framework, which enhances reasoning through
+a two-stage process: offline RL for stable convergence and online RL for
+refined alignment. This coarse-to-fine training strategy leads to substantial
+improvements on downstream reasoning tasks, e.g., MMMU and MathVista. To
+optimize efficiency, we propose a Visual Resolution Router (ViR) that
+dynamically adjusts the resolution of visual tokens without compromising
+performance. Coupled with ViR, our Decoupled Vision-Language Deployment (DvD)
+strategy separates the vision encoder and language model across different GPUs,
+effectively balancing computational load. These contributions collectively
+enable InternVL3.5 to achieve up to a +16.0\% gain in overall reasoning
+performance and a 4.05times inference speedup compared to its predecessor,
+i.e., InternVL3. In addition, InternVL3.5 supports novel capabilities such as
+GUI interaction and embodied agency. Notably, our largest model, i.e.,
+InternVL3.5-241B-A28B, attains state-of-the-art results among open-source MLLMs
+across general multimodal, reasoning, text, and agentic tasks -- narrowing the
+performance gap with leading commercial models like GPT-5. All models and code
+are publicly released.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 2. AgentFly: Fine-tuning LLM Agents without Fine-tuning LLMs ---
+Link: https://huggingface.co/papers/2508.16153
+
+## Abstract (Original)
+In this paper, we introduce a novel learning paradigm for adaptive Large
+Language Model (LLM) agents that eliminates the need for fine-tuning the
+underlying LLMs. Existing approaches are often either rigid, relying on static,
+handcrafted reflection workflows, or computationally intensive, requiring
+gradient updates of LLM model parameters. In contrast, our method enables
+low-cost continual adaptation via memory-based online reinforcement learning.
+We formalise this as a Memory-augmented Markov Decision Process (M-MDP),
+equipped with a neural case-selection policy to guide action decisions. Past
+experiences are stored in an episodic memory, either differentiable or
+non-parametric. The policy is continually updated based on environmental
+feedback through a memory rewriting mechanism, whereas policy improvement is
+achieved through efficient memory reading (retrieval). We instantiate our agent
+model in the deep research setting, namely AgentFly, which attains top-1 on
+GAIA validation (87.88% Pass@3) and 79.40% on the test set. It reaches
+66.6% F1 and 80.4% PM on the DeepResearcher dataset, outperforming the
+state-of-the-art training-based method, while case-based memory adds 4.7% to
+9.6% absolute points on out-of-distribution tasks. Our approach offers a
+scalable and efficient pathway for developing generalist LLM agents capable of
+continuous, real-time learning without gradient updates, advancing machine
+learning towards open-ended skill acquisition and deep research scenarios. The
+code is available at https://github.com/Agent-on-the-Fly/AgentFly.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 3. VibeVoice Technical Report ---
+Link: https://huggingface.co/papers/2508.19205
+
+## Abstract (Original)
+This report presents VibeVoice, a novel model designed to synthesize
+long-form speech with multiple speakers by employing next-token diffusion,
+which is a unified method for modeling continuous data by autoregressively
+generating latent vectors via diffusion. To enable this, we introduce a novel
+continuous speech tokenizer that, when compared to the popular Encodec model,
+improves data compression by 80 times while maintaining comparable performance.
+The tokenizer effectively preserves audio fidelity while significantly boosting
+computational efficiency for processing long sequences. Thus, VibeVoice can
+synthesize long-form speech for up to 90 minutes (in a 64K context window
+length) with a maximum of 4 speakers, capturing the authentic conversational
+``vibe'' and surpassing open-source and proprietary dialogue models.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 4. Beyond Pass@1: Self-Play with Variational Problem Synthesis Sustains
+  RLVR ---
+Link: https://huggingface.co/papers/2508.14029
+
+## Abstract (Original)
+Reinforcement Learning with Verifiable Rewards (RLVR) has recently emerged as
+a key paradigm for post-training Large Language Models (LLMs), particularly for
+complex reasoning tasks. However, vanilla RLVR training has been shown to
+improve Pass@1 performance at the expense of policy entropy, leading to reduced
+generation diversity and limiting the Pass@k performance, which typically
+represents the upper bound of LLM reasoning capability. In this paper, we
+systematically analyze the policy's generation diversity from the perspective
+of training problems and find that augmenting and updating training problems
+helps mitigate entropy collapse during training. Based on these observations,
+we propose an online Self-play with Variational problem Synthesis (SvS)
+strategy for RLVR training, which uses the policy's correct solutions to
+synthesize variational problems while ensuring their reference answers remain
+identical to the originals. This self-improving strategy effectively maintains
+policy entropy during training and substantially improves Pass@k compared with
+standard RLVR, sustaining prolonged improvements and achieving absolute gains
+of 18.3% and 22.8% in Pass@32 performance on the competition-level AIME24 and
+AIME25 benchmarks. Experiments on 12 reasoning benchmarks across varying model
+sizes from 3B to 32B consistently demonstrate the generalizability and
+robustness of SvS.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 5. rStar2-Agent: Agentic Reasoning Technical Report ---
+Link: https://huggingface.co/papers/2508.20722
+
+## Abstract (Original)
+We introduce rStar2-Agent, a 14B math reasoning model trained with agentic
+reinforcement learning to achieve frontier-level performance. Beyond current
+long CoT, the model demonstrates advanced cognitive behaviors, such as thinking
+carefully before using Python coding tools and reflecting on code execution
+feedback to autonomously explore, verify, and refine intermediate steps in
+complex problem-solving. This capability is enabled through three key
+innovations that makes agentic RL effective at scale: (i) an efficient RL
+infrastructure with a reliable Python code environment that supports
+high-throughput execution and mitigates the high rollout costs, enabling
+training on limited GPU resources (64 MI300X GPUs); (ii) GRPO-RoC, an agentic
+RL algorithm with a Resample-on-Correct rollout strategy that addresses the
+inherent environment noises from coding tools, allowing the model to reason
+more effectively in a code environment; (iii) An efficient agent training
+recipe that starts with non-reasoning SFT and progresses through multi-RL
+stages, yielding advanced cognitive abilities with minimal compute cost. To
+this end, rStar2-Agent boosts a pre-trained 14B model to state of the art in
+only 510 RL steps within one week, achieving average pass@1 scores of 80.6% on
+AIME24 and 69.8% on AIME25, surpassing DeepSeek-R1 (671B) with significantly
+shorter responses. Beyond mathematics, rStar2-Agent-14B also demonstrates
+strong generalization to alignment, scientific reasoning, and agentic tool-use
+tasks. Code and training recipes are available at
+https://github.com/microsoft/rStar.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 6. Pref-GRPO: Pairwise Preference Reward-based GRPO for Stable
+  Text-to-Image Reinforcement Learning ---
+Link: https://huggingface.co/papers/2508.20751
+
+## Abstract (Original)
+Recent advancements highlight the importance of GRPO-based reinforcement
+learning methods and benchmarking in enhancing text-to-image (T2I) generation.
+However, current methods using pointwise reward models (RM) for scoring
+generated images are susceptible to reward hacking. We reveal that this happens
+when minimal score differences between images are amplified after
+normalization, creating illusory advantages that drive the model to
+over-optimize for trivial gains, ultimately destabilizing the image generation
+process. To address this, we propose Pref-GRPO, a pairwise preference
+reward-based GRPO method that shifts the optimization objective from score
+maximization to preference fitting, ensuring more stable training. In
+Pref-GRPO, images are pairwise compared within each group using preference RM,
+and the win rate is used as the reward signal. Extensive experiments
+demonstrate that PREF-GRPO differentiates subtle image quality differences,
+providing more stable advantages and mitigating reward hacking. Additionally,
+existing T2I benchmarks are limited by coarse evaluation criteria, hindering
+comprehensive model assessment. To solve this, we introduce UniGenBench, a
+unified T2I benchmark comprising 600 prompts across 5 main themes and 20
+subthemes. It evaluates semantic consistency through 10 primary and 27
+sub-criteria, leveraging MLLM for benchmark construction and evaluation. Our
+benchmarks uncover the strengths and weaknesses of both open and closed-source
+T2I models and validate the effectiveness of Pref-GRPO.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 7. Beyond Transcription: Mechanistic Interpretability in ASR ---
+Link: https://huggingface.co/papers/2508.15882
+
+## Abstract (Original)
+Interpretability methods have recently gained significant attention,
+particularly in the context of large language models, enabling insights into
+linguistic representations, error detection, and model behaviors such as
+hallucinations and repetitions. However, these techniques remain underexplored
+in automatic speech recognition (ASR), despite their potential to advance both
+the performance and interpretability of ASR systems. In this work, we adapt and
+systematically apply established interpretability methods such as logit lens,
+linear probing, and activation patching, to examine how acoustic and semantic
+information evolves across layers in ASR systems. Our experiments reveal
+previously unknown internal dynamics, including specific encoder-decoder
+interactions responsible for repetition hallucinations and semantic biases
+encoded deep within acoustic representations. These insights demonstrate the
+benefits of extending and applying interpretability techniques to speech
+recognition, opening promising directions for future research on improving
+model transparency and robustness.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 8. Self-Rewarding Vision-Language Model via Reasoning Decomposition ---
+Link: https://huggingface.co/papers/2508.19652
+
+## Abstract (Original)
+Vision-Language Models (VLMs) often suffer from visual hallucinations, saying
+things that are not actually in the image, and language shortcuts, where they
+skip the visual part and just rely on text priors. These issues arise because
+most post-training methods for VLMs rely on simple verifiable answer matching
+and supervise only final outputs, leaving intermediate visual reasoning without
+explicit guidance. As a result, VLMs receive sparse visual signals and often
+learn to prioritize language-based reasoning over visual perception. To
+mitigate this, some existing methods add visual supervision using human
+annotations or distilled labels from external large models. However, human
+annotations are labor-intensive and costly, and because external signals cannot
+adapt to the evolving policy, they cause distributional shifts that can lead to
+reward hacking. In this paper, we introduce Vision-SR1, a self-rewarding method
+that improves visual reasoning without relying on external visual supervisions
+via reinforcement learning. Vision-SR1 decomposes VLM reasoning into two
+stages: visual perception and language reasoning. The model is first prompted
+to produce self-contained visual perceptions that are sufficient to answer the
+question without referring back the input image. To validate this
+self-containment, the same VLM model is then re-prompted to perform language
+reasoning using only the generated perception as input to compute reward. This
+self-reward is combined with supervision on final outputs, providing a balanced
+training signal that strengthens both visual perception and language reasoning.
+Our experiments demonstrate that Vision-SR1 improves visual reasoning,
+mitigates visual hallucinations, and reduces reliance on language shortcuts
+across diverse vision-language tasks.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 9. TreePO: Bridging the Gap of Policy Optimization and Efficacy and
+  Inference Efficiency with Heuristic Tree-based Modeling ---
+Link: https://huggingface.co/papers/2508.17445
+
+## Abstract (Original)
+Recent advancements in aligning large language models via reinforcement
+learning have achieved remarkable gains in solving complex reasoning problems,
+but at the cost of expensive on-policy rollouts and limited exploration of
+diverse reasoning paths. In this work, we introduce TreePO, involving a
+self-guided rollout algorithm that views sequence generation as a
+tree-structured searching process. Composed of dynamic tree sampling policy and
+fixed-length segment decoding, TreePO leverages local uncertainty to warrant
+additional branches. By amortizing computation across common prefixes and
+pruning low-value paths early, TreePO essentially reduces the per-update
+compute burden while preserving or enhancing exploration diversity. Key
+contributions include: (1) a segment-wise sampling algorithm that alleviates
+the KV cache burden through contiguous segments and spawns new branches along
+with an early-stop mechanism; (2) a tree-based segment-level advantage
+estimation that considers both global and local proximal policy optimization.
+and (3) analysis on the effectiveness of probability and quality-driven dynamic
+divergence and fallback strategy. We empirically validate the performance gain
+of TreePO on a set reasoning benchmarks and the efficiency saving of GPU hours
+from 22\% up to 43\% of the sampling design for the trained models, meanwhile
+showing up to 40\% reduction at trajectory-level and 35\% at token-level
+sampling compute for the existing models. While offering a free lunch of
+inference efficiency, TreePO reveals a practical path toward scaling RL-based
+post-training with fewer samples and less compute. Home page locates at
+https://m-a-p.ai/TreePO.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 10. MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World
+  Tasks via MCP Servers ---
+Link: https://huggingface.co/papers/2508.20453
+
+## Abstract (Original)
+We introduce MCP-Bench, a benchmark for evaluating large language models
+(LLMs) on realistic, multi-step tasks that demand tool use, cross-tool
+coordination, precise parameter control, and planning/reasoning for solving
+tasks. Built on the Model Context Protocol (MCP), MCP-Bench connects LLMs to 28
+representative live MCP servers spanning 250 tools across domains such as
+finance, traveling, scientific computing, and academic search. Unlike prior
+API-based benchmarks, each MCP server provides a set of complementary tools
+designed to work together, enabling the construction of authentic, multi-step
+tasks with rich input-output coupling. Tasks in MCP-Bench test agents' ability
+to retrieve relevant tools from fuzzy instructions without explicit tool names,
+plan multi-hop execution trajectories for complex objectives, ground responses
+in intermediate tool outputs, and orchestrate cross-domain workflows -
+capabilities not adequately evaluated by existing benchmarks that rely on
+explicit tool specifications, shallow few-step workflows, and isolated domain
+operations. We propose a multi-faceted evaluation framework covering tool-level
+schema understanding and usage, trajectory-level planning, and task completion.
+Experiments on 20 advanced LLMs reveal persistent challenges in MCP-Bench. Code
+and data: https://github.com/Accenture/mcp-bench.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
