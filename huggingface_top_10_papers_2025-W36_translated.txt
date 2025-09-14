@@ -1,0 +1,302 @@
+Hugging Face 주간 인기 논문 Top 10 (2025-W36) - 번역본
+출처: https://huggingface.co/papers/week/2025-W36
+
+--- 1. A.S.E: A Repository-Level Benchmark for Evaluating Security in
+  AI-Generated Code ---
+Link: https://huggingface.co/papers/2508.18106
+
+## Abstract (Original)
+The increasing adoption of large language models (LLMs) in software
+engineering necessitates rigorous security evaluation of their generated code.
+However, existing benchmarks are inadequate, as they focus on isolated code
+snippets, employ unstable evaluation methods that lack reproducibility, and
+fail to connect the quality of input context with the security of the output.
+To address these gaps, we introduce A.S.E (AI Code Generation Security
+Evaluation), a benchmark for repository-level secure code generation. A.S.E
+constructs tasks from real-world repositories with documented CVEs, preserving
+full repository context like build systems and cross-file dependencies. Its
+reproducible, containerized evaluation framework uses expert-defined rules to
+provide stable, auditable assessments of security, build quality, and
+generation stability. Our evaluation of leading LLMs on A.S.E reveals three key
+findings: (1) Claude-3.7-Sonnet achieves the best overall performance. (2) The
+security gap between proprietary and open-source models is narrow;
+Qwen3-235B-A22B-Instruct attains the top security score. (3) Concise,
+``fast-thinking'' decoding strategies consistently outperform complex,
+``slow-thinking'' reasoning for security patching.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 2. Drivel-ology: Challenging LLMs with Interpreting Nonsense with Depth ---
+Link: https://huggingface.co/papers/2509.03867
+
+## Abstract (Original)
+We introduce Drivelology, a unique linguistic phenomenon characterised as
+"nonsense with depth", utterances that are syntactically coherent yet
+pragmatically paradoxical, emotionally loaded, or rhetorically subversive.
+While such expressions may resemble surface-level nonsense, they encode
+implicit meaning requiring contextual inference, moral reasoning, or emotional
+interpretation. We find that current large language models (LLMs), despite
+excelling at many natural language processing (NLP) tasks, consistently fail to
+grasp the layered semantics of Drivelological text. To investigate this, we
+construct a small but diverse benchmark dataset of over 1,200 meticulously
+curated examples, with select instances in English, Mandarin, Spanish, French,
+Japanese, and Korean. Annotation was especially challenging: each of the
+examples required careful expert review to verify that it truly reflected
+Drivelological characteristics. The process involved multiple rounds of
+discussion and adjudication to address disagreements, highlighting the subtle
+and subjective nature of the Drivelology. We evaluate a range of LLMs on
+classification, generation, and reasoning tasks. Our results reveal clear
+limitations of LLMs: models often confuse Drivelology with shallow nonsense,
+produce incoherent justifications, or miss the implied rhetorical function
+altogether. These findings highlight a deeper representational gap in LLMs'
+pragmatic understanding and challenge the assumption that statistical fluency
+implies cognitive comprehension. We release our dataset and code to facilitate
+further research in modelling linguistic depth beyond surface-level coherence.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 3. The Landscape of Agentic Reinforcement Learning for LLMs: A Survey ---
+Link: https://huggingface.co/papers/2509.02547
+
+## Abstract (Original)
+The emergence of agentic reinforcement learning (Agentic RL) marks a paradigm
+shift from conventional reinforcement learning applied to large language models
+(LLM RL), reframing LLMs from passive sequence generators into autonomous,
+decision-making agents embedded in complex, dynamic worlds. This survey
+formalizes this conceptual shift by contrasting the degenerate single-step
+Markov Decision Processes (MDPs) of LLM-RL with the temporally extended,
+partially observable Markov decision processes (POMDPs) that define Agentic RL.
+Building on this foundation, we propose a comprehensive twofold taxonomy: one
+organized around core agentic capabilities, including planning, tool use,
+memory, reasoning, self-improvement, and perception, and the other around their
+applications across diverse task domains. Central to our thesis is that
+reinforcement learning serves as the critical mechanism for transforming these
+capabilities from static, heuristic modules into adaptive, robust agentic
+behavior. To support and accelerate future research, we consolidate the
+landscape of open-source environments, benchmarks, and frameworks into a
+practical compendium. By synthesizing over five hundred recent works, this
+survey charts the contours of this rapidly evolving field and highlights the
+opportunities and challenges that will shape the development of scalable,
+general-purpose AI agents.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 4. A Survey of Scientific Large Language Models: From Data Foundations to
+  Agent Frontiers ---
+Link: https://huggingface.co/papers/2508.21148
+
+## Abstract (Original)
+Scientific Large Language Models (Sci-LLMs) are transforming how knowledge is
+represented, integrated, and applied in scientific research, yet their progress
+is shaped by the complex nature of scientific data. This survey presents a
+comprehensive, data-centric synthesis that reframes the development of Sci-LLMs
+as a co-evolution between models and their underlying data substrate. We
+formulate a unified taxonomy of scientific data and a hierarchical model of
+scientific knowledge, emphasizing the multimodal, cross-scale, and
+domain-specific challenges that differentiate scientific corpora from general
+natural language processing datasets. We systematically review recent Sci-LLMs,
+from general-purpose foundations to specialized models across diverse
+scientific disciplines, alongside an extensive analysis of over 270
+pre-/post-training datasets, showing why Sci-LLMs pose distinct demands --
+heterogeneous, multi-scale, uncertainty-laden corpora that require
+representations preserving domain invariance and enabling cross-modal
+reasoning. On evaluation, we examine over 190 benchmark datasets and trace a
+shift from static exams toward process- and discovery-oriented assessments with
+advanced evaluation protocols. These data-centric analyses highlight persistent
+issues in scientific data development and discuss emerging solutions involving
+semi-automated annotation pipelines and expert validation. Finally, we outline
+a paradigm shift toward closed-loop systems where autonomous agents based on
+Sci-LLMs actively experiment, validate, and contribute to a living, evolving
+knowledge base. Collectively, this work provides a roadmap for building
+trustworthy, continually evolving artificial intelligence (AI) systems that
+function as a true partner in accelerating scientific discovery.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 5. UI-TARS-2 Technical Report: Advancing GUI Agent with Multi-Turn
+  Reinforcement Learning ---
+Link: https://huggingface.co/papers/2509.02544
+
+## Abstract (Original)
+The development of autonomous agents for graphical user interfaces (GUIs)
+presents major challenges in artificial intelligence. While recent advances in
+native agent models have shown promise by unifying perception, reasoning,
+action, and memory through end-to-end learning, open problems remain in data
+scalability, multi-turn reinforcement learning (RL), the limitations of
+GUI-only operation, and environment stability. In this technical report, we
+present UI-TARS-2, a native GUI-centered agent model that addresses these
+challenges through a systematic training methodology: a data flywheel for
+scalable data generation, a stabilized multi-turn RL framework, a hybrid GUI
+environment that integrates file systems and terminals, and a unified sandbox
+platform for large-scale rollouts. Empirical evaluation demonstrates that
+UI-TARS-2 achieves significant improvements over its predecessor UI-TARS-1.5.
+On GUI benchmarks, it reaches 88.2 on Online-Mind2Web, 47.5 on OSWorld, 50.6 on
+WindowsAgentArena, and 73.3 on AndroidWorld, outperforming strong baselines
+such as Claude and OpenAI agents. In game environments, it attains a mean
+normalized score of 59.8 across a 15-game suite-roughly 60% of human-level
+performance-and remains competitive with frontier proprietary models (e.g.,
+OpenAI o3) on LMGame-Bench. Additionally, the model can generalize to
+long-horizon information-seeking tasks and software engineering benchmarks,
+highlighting its robustness across diverse agent tasks. Detailed analyses of
+training dynamics further provide insights into achieving stability and
+efficiency in large-scale agent RL. These results underscore UI-TARS-2's
+potential to advance the state of GUI agents and exhibit strong generalization
+to real-world interactive scenarios.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 6. R-4B: Incentivizing General-Purpose Auto-Thinking Capability in MLLMs
+  via Bi-Mode Annealing and Reinforce Learning ---
+Link: https://huggingface.co/papers/2508.21113
+
+## Abstract (Original)
+Multimodal Large Language Models (MLLMs) equipped with step-by-step thinking
+capabilities have demonstrated remarkable performance on complex reasoning
+problems. However, this thinking process is redundant for simple problems
+solvable without complex reasoning. To address this inefficiency, we propose
+R-4B, an auto-thinking MLLM, which can adaptively decide when to think based on
+problem complexity. The central idea of R-4B is to empower the model with both
+thinking and non-thinking capabilities using bi-mode annealing, and apply
+Bi-mode Policy Optimization~(BPO) to improve the model's accuracy in
+determining whether to activate the thinking process. Specifically, we first
+train the model on a carefully curated dataset spanning various topics, which
+contains samples from both thinking and non-thinking modes. Then it undergoes a
+second phase of training under an improved GRPO framework, where the policy
+model is forced to generate responses from both modes for each input query.
+Experimental results show that R-4B achieves state-of-the-art performance
+across 25 challenging benchmarks. It outperforms Qwen2.5-VL-7B in most tasks
+and achieves performance comparable to larger models such as
+Kimi-VL-A3B-Thinking-2506 (16B) on reasoning-intensive benchmarks with lower
+computational cost.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 7. From Editor to Dense Geometry Estimator ---
+Link: https://huggingface.co/papers/2509.04338
+
+## Abstract (Original)
+Leveraging visual priors from pre-trained text-to-image (T2I) generative
+models has shown success in dense prediction. However, dense prediction is
+inherently an image-to-image task, suggesting that image editing models, rather
+than T2I generative models, may be a more suitable foundation for fine-tuning.
+  Motivated by this, we conduct a systematic analysis of the fine-tuning
+behaviors of both editors and generators for dense geometry estimation. Our
+findings show that editing models possess inherent structural priors, which
+enable them to converge more stably by ``refining" their innate features, and
+ultimately achieve higher performance than their generative counterparts.
+  Based on these findings, we introduce FE2E, a framework that
+pioneeringly adapts an advanced editing model based on Diffusion Transformer
+(DiT) architecture for dense geometry prediction. Specifically, to tailor the
+editor for this deterministic task, we reformulate the editor's original flow
+matching loss into the ``consistent velocity" training objective. And we use
+logarithmic quantization to resolve the precision conflict between the editor's
+native BFloat16 format and the high precision demand of our tasks.
+Additionally, we leverage the DiT's global attention for a cost-free joint
+estimation of depth and normals in a single forward pass, enabling their
+supervisory signals to mutually enhance each other.
+  Without scaling up the training data, FE2E achieves impressive performance
+improvements in zero-shot monocular depth and normal estimation across multiple
+datasets. Notably, it achieves over 35\% performance gains on the ETH3D dataset
+and outperforms the DepthAnything series, which is trained on 100times data.
+The project page can be accessed https://amap-ml.github.io/FE2E/{here}.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 8. SimpleTIR: End-to-End Reinforcement Learning for Multi-Turn
+  Tool-Integrated Reasoning ---
+Link: https://huggingface.co/papers/2509.02479
+
+## Abstract (Original)
+Large Language Models (LLMs) can significantly improve their reasoning
+capabilities by interacting with external tools, a paradigm known as
+Tool-Integrated Reasoning (TIR). However, extending TIR to multi-turn scenarios
+using Reinforcement Learning (RL) is often hindered by training instability and
+performance collapse. We identify that such instability is primarily caused by
+a distributional drift from external tool feedback, leading to the generation
+of low-probability tokens. This issue compounds over successive turns, causing
+catastrophic gradient norm explosions that derail the training process. To
+address this challenge, we introduce SimpleTIR , a plug-and-play algorithm that
+stabilizes multi-turn TIR training. Its core strategy is to identify and filter
+out trajectories containing void turns, i.e., turns that yield neither a code
+block nor a final answer. By removing these problematic trajectories from the
+policy update, SimpleTIR effectively blocks the harmful, high-magnitude
+gradients, thus stabilizing the learning dynamics. Extensive experiments show
+that SimpleTIR achieves state-of-the-art performance on challenging math
+reasoning benchmarks, notably elevating the AIME24 score from a text-only
+baseline of 22.1 to 50.5 when starting from the Qwen2.5-7B base model.
+Furthermore, by avoiding the constraints of supervised fine-tuning, SimpleTIR
+encourages the model to discover diverse and sophisticated reasoning patterns,
+such as self-correction and cross-validation.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 9. LLaVA-Critic-R1: Your Critic Model is Secretly a Strong Policy Model ---
+Link: https://huggingface.co/papers/2509.00676
+
+## Abstract (Original)
+In vision-language modeling, critic models are typically trained to evaluate
+outputs -- assigning scalar scores or pairwise preferences -- rather than to
+generate responses. This separation from policy models, which produce the
+responses, is so entrenched that critics are rarely considered for direct
+policy use. In this work, we challenge this convention. We propose to
+reorganize preference-labeled critic datasets into verifiable training signals
+and perform reinforcement learning directly on a base generative model,
+producing LLaVA-Critic-R1, a multimodal critic trained to optimize preference
+judgments while retaining full generation ability. Surprisingly,
+LLaVA-Critic-R1 emerges not only as a top-performing critic but also as a
+competitive policy model -- matching or surpassing specialized reasoning VLMs
+trained with in-domain data across 26 visual reasoning and understanding
+benchmarks, with an average gain of +5.7% over its base model (Qwen-2.5-VL-7B).
+Extending this approach to existing strong reasoning VLMs yields
+LLaVA-Critic-R1+, which further advances policy performance without sacrificing
+critic quality, achieving a SoTA performance of 71.9 on MMMU at the 7B scale.
+Finally, we show that the enhanced critic ability benefits inference: applying
+self-critique at test time yields an average +13.8% improvement on five
+representative reasoning tasks without additional training. Our results reveal
+that RL training on critic data can produce a unified model excelling at both
+evaluation and generation, offering a simple path toward scalable,
+self-improving multimodal systems.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 10. EmbodiedOneVision: Interleaved Vision-Text-Action Pretraining for
+  General Robot Control ---
+Link: https://huggingface.co/papers/2508.21112
+
+## Abstract (Original)
+The human ability to seamlessly perform multimodal reasoning and physical
+interaction in the open world is a core goal for general-purpose embodied
+intelligent systems. Recent vision-language-action (VLA) models, which are
+co-trained on large-scale robot and visual-text data, have demonstrated notable
+progress in general robot control. However, they still fail to achieve
+human-level flexibility in interleaved reasoning and interaction. In this work,
+introduce EO-Robotics, consists of EO-1 model and EO-Data1.5M dataset. EO-1 is
+a unified embodied foundation model that achieves superior performance in
+multimodal embodied reasoning and robot control through interleaved
+vision-text-action pre-training. The development of EO-1 is based on two key
+pillars: (i) a unified architecture that processes multimodal inputs
+indiscriminately (image, text, video, and action), and (ii) a massive,
+high-quality multimodal embodied reasoning dataset, EO-Data1.5M, which contains
+over 1.5 million samples with emphasis on interleaved vision-text-action
+comprehension. EO-1 is trained through synergies between auto-regressive
+decoding and flow matching denoising on EO-Data1.5M, enabling seamless robot
+action generation and multimodal embodied reasoning. Extensive experiments
+demonstrate the effectiveness of interleaved vision-text-action learning for
+open-world understanding and generalization, validated through a variety of
+long-horizon, dexterous manipulation tasks across multiple embodiments. This
+paper details the architecture of EO-1, the data construction strategy of
+EO-Data1.5M, and the training methodology, offering valuable insights for
+developing advanced embodied foundation models.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
