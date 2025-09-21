@@ -1,0 +1,283 @@
+Hugging Face 주간 인기 논문 Top 10 (2025-W37) - 번역본
+출처: https://huggingface.co/papers/week/2025-W37
+
+--- 1. Sharing is Caring: Efficient LM Post-Training with Collective RL
+  Experience Sharing ---
+Link: https://huggingface.co/papers/2509.08721
+
+## Abstract (Original)
+Post-training language models (LMs) with reinforcement learning (RL) can
+enhance their complex reasoning capabilities without supervised fine-tuning, as
+demonstrated by DeepSeek-R1-Zero. However, effectively utilizing RL for LMs
+requires significant parallelization to scale-up inference, which introduces
+non-trivial technical challenges (e.g. latency, memory, and reliability)
+alongside ever-growing financial costs. We present Swarm sAmpling Policy
+Optimization (SAPO), a fully decentralized and asynchronous RL post-training
+algorithm. SAPO is designed for decentralized networks of heterogenous compute
+nodes, where each node manages its own policy model(s) while "sharing" rollouts
+with others in the network; no explicit assumptions about latency, model
+homogeneity, or hardware are required and nodes can operate in silo if desired.
+As a result, the algorithm avoids common bottlenecks in scaling RL
+post-training while also allowing (and even encouraging) new possibilities. By
+sampling rollouts "shared" across the network, it enables "Aha moments" to
+propagate, thereby bootstrapping the learning process. In this paper we show
+SAPO achieved cumulative reward gains of up to 94% in controlled experiments.
+We also share insights from tests on a network with thousands of nodes
+contributed by Gensyn community members running the algorithm on diverse
+hardware and models during an open-source demo.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 2. VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action
+  Model ---
+Link: https://huggingface.co/papers/2509.09372
+
+## Abstract (Original)
+Vision-Language-Action (VLA) models typically bridge the gap between
+perceptual and action spaces by pre-training a large-scale Vision-Language
+Model (VLM) on robotic data. While this approach greatly enhances performance,
+it also incurs significant training costs. In this paper, we investigate how to
+effectively bridge vision-language (VL) representations to action (A). We
+introduce VLA-Adapter, a novel paradigm designed to reduce the reliance of VLA
+models on large-scale VLMs and extensive pre-training. To this end, we first
+systematically analyze the effectiveness of various VL conditions and present
+key findings on which conditions are essential for bridging perception and
+action spaces. Based on these insights, we propose a lightweight Policy module
+with Bridge Attention, which autonomously injects the optimal condition into
+the action space. In this way, our method achieves high performance using only
+a 0.5B-parameter backbone, without any robotic data pre-training. Extensive
+experiments on both simulated and real-world robotic benchmarks demonstrate
+that VLA-Adapter not only achieves state-of-the-art level performance, but also
+offers the fast inference speed reported to date. Furthermore, thanks to the
+proposed advanced bridging paradigm, VLA-Adapter enables the training of a
+powerful VLA model in just 8 hours on a single consumer-grade GPU, greatly
+lowering the barrier to deploying the VLA model. Project page:
+https://vla-adapter.github.io/.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 3. Why Language Models Hallucinate ---
+Link: https://huggingface.co/papers/2509.04664
+
+## Abstract (Original)
+Like students facing hard exam questions, large language models sometimes
+guess when uncertain, producing plausible yet incorrect statements instead of
+admitting uncertainty. Such "hallucinations" persist even in state-of-the-art
+systems and undermine trust. We argue that language models hallucinate because
+the training and evaluation procedures reward guessing over acknowledging
+uncertainty, and we analyze the statistical causes of hallucinations in the
+modern training pipeline. Hallucinations need not be mysterious -- they
+originate simply as errors in binary classification. If incorrect statements
+cannot be distinguished from facts, then hallucinations in pretrained language
+models will arise through natural statistical pressures. We then argue that
+hallucinations persist due to the way most evaluations are graded -- language
+models are optimized to be good test-takers, and guessing when uncertain
+improves test performance. This "epidemic" of penalizing uncertain responses
+can only be addressed through a socio-technical mitigation: modifying the
+scoring of existing benchmarks that are misaligned but dominate leaderboards,
+rather than introducing additional hallucination evaluations. This change may
+steer the field toward more trustworthy AI systems.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 4. A Survey of Reinforcement Learning for Large Reasoning Models ---
+Link: https://huggingface.co/papers/2509.08827
+
+## Abstract (Original)
+In this paper, we survey recent advances in Reinforcement Learning (RL) for
+reasoning with Large Language Models (LLMs). RL has achieved remarkable success
+in advancing the frontier of LLM capabilities, particularly in addressing
+complex logical tasks such as mathematics and coding. As a result, RL has
+emerged as a foundational methodology for transforming LLMs into LRMs. With the
+rapid progress of the field, further scaling of RL for LRMs now faces
+foundational challenges not only in computational resources but also in
+algorithm design, training data, and infrastructure. To this end, it is timely
+to revisit the development of this domain, reassess its trajectory, and explore
+strategies to enhance the scalability of RL toward Artificial SuperIntelligence
+(ASI). In particular, we examine research applying RL to LLMs and LRMs for
+reasoning abilities, especially since the release of DeepSeek-R1, including
+foundational components, core problems, training resources, and downstream
+applications, to identify future opportunities and directions for this rapidly
+evolving area. We hope this review will promote future research on RL for
+broader reasoning models. Github:
+https://github.com/TsinghuaC3I/Awesome-RL-for-LRMs
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 5. Reverse-Engineered Reasoning for Open-Ended Generation ---
+Link: https://huggingface.co/papers/2509.06160
+
+## Abstract (Original)
+While the ``deep reasoning'' paradigm has spurred significant advances in
+verifiable domains like mathematics, its application to open-ended, creative
+generation remains a critical challenge. The two dominant methods for
+instilling reasoning -- reinforcement learning (RL) and instruction
+distillation -- falter in this area; RL struggles with the absence of clear
+reward signals and high-quality reward models, while distillation is
+prohibitively expensive and capped by the teacher model's capabilities. To
+overcome these limitations, we introduce REverse-Engineered Reasoning (REER), a
+new paradigm that fundamentally shifts the approach. Instead of building a
+reasoning process ``forwards'' through trial-and-error or imitation, REER works
+``backwards'' from known-good solutions to computationally discover the latent,
+step-by-step deep reasoning process that could have produced them. Using this
+scalable, gradient-free approach, we curate and open-source DeepWriting-20K, a
+large-scale dataset of 20,000 deep reasoning trajectories for open-ended tasks.
+Our model, DeepWriter-8B, trained on this data, not only surpasses strong
+open-source baselines but also achieves performance competitive with, and at
+times superior to, leading proprietary models like GPT-4o and Claude 3.5.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 6. HuMo: Human-Centric Video Generation via Collaborative Multi-Modal
+  Conditioning ---
+Link: https://huggingface.co/papers/2509.08519
+
+## Abstract (Original)
+Human-Centric Video Generation (HCVG) methods seek to synthesize human videos
+from multimodal inputs, including text, image, and audio. Existing methods
+struggle to effectively coordinate these heterogeneous modalities due to two
+challenges: the scarcity of training data with paired triplet conditions and
+the difficulty of collaborating the sub-tasks of subject preservation and
+audio-visual sync with multimodal inputs. In this work, we present HuMo, a
+unified HCVG framework for collaborative multimodal control. For the first
+challenge, we construct a high-quality dataset with diverse and paired text,
+reference images, and audio. For the second challenge, we propose a two-stage
+progressive multimodal training paradigm with task-specific strategies. For the
+subject preservation task, to maintain the prompt following and visual
+generation abilities of the foundation model, we adopt the minimal-invasive
+image injection strategy. For the audio-visual sync task, besides the commonly
+adopted audio cross-attention layer, we propose a focus-by-predicting strategy
+that implicitly guides the model to associate audio with facial regions. For
+joint learning of controllabilities across multimodal inputs, building on
+previously acquired capabilities, we progressively incorporate the audio-visual
+sync task. During inference, for flexible and fine-grained multimodal control,
+we design a time-adaptive Classifier-Free Guidance strategy that dynamically
+adjusts guidance weights across denoising steps. Extensive experimental results
+demonstrate that HuMo surpasses specialized state-of-the-art methods in
+sub-tasks, establishing a unified framework for collaborative
+multimodal-conditioned HCVG. Project Page:
+https://phantom-video.github.io/HuMo.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 7. Parallel-R1: Towards Parallel Thinking via Reinforcement Learning ---
+Link: https://huggingface.co/papers/2509.07980
+
+## Abstract (Original)
+Parallel thinking has emerged as a novel approach for enhancing the reasoning
+capabilities of large language models (LLMs) by exploring multiple reasoning
+paths concurrently. However, activating such capabilities through training
+remains challenging, as existing methods predominantly rely on supervised
+fine-tuning (SFT) over synthetic data, which encourages teacher-forced
+imitation rather than exploration and generalization. Different from them, we
+propose Parallel-R1, the first reinforcement learning (RL) framework
+that enables parallel thinking behaviors for complex real-world reasoning
+tasks. Our framework employs a progressive curriculum that explicitly addresses
+the cold-start problem in training parallel thinking with RL. We first use SFT
+on prompt-generated trajectories from easier tasks to instill the parallel
+thinking ability, then transition to RL to explore and generalize this skill on
+harder problems. Experiments on various math benchmarks, including MATH, AMC23,
+and AIME, show that Parallel-R1 successfully instills parallel thinking,
+leading to 8.4% accuracy improvements over the sequential thinking model
+trained directly on challenging tasks with RL. Further analysis reveals a clear
+shift in the model's thinking behavior: at an early stage, it uses parallel
+thinking as an exploration strategy, while in a later stage, it uses the same
+capability for multi-perspective verification. Most significantly, we validate
+parallel thinking as a mid-training exploration scaffold, where this
+temporary exploratory phase unlocks a higher performance ceiling after RL,
+yielding a 42.9% improvement over the baseline on AIME25. Our model, data, and
+code will be open-source at https://github.com/zhengkid/Parallel-R1.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 8. Visual Representation Alignment for Multimodal Large Language Models ---
+Link: https://huggingface.co/papers/2509.07979
+
+## Abstract (Original)
+Multimodal large language models (MLLMs) trained with visual instruction
+tuning have achieved strong performance across diverse tasks, yet they remain
+limited in vision-centric tasks such as object counting or spatial reasoning.
+We attribute this gap to the prevailing text-only supervision paradigm, which
+provides only indirect guidance for the visual pathway and often leads MLLMs to
+discard fine-grained visual details during training. In this paper, we present
+VIsual Representation ALignment (VIRAL), a simple yet effective regularization
+strategy that aligns the internal visual representations of MLLMs with those of
+pre-trained vision foundation models (VFMs). By explicitly enforcing this
+alignment, VIRAL enables the model not only to retain critical visual details
+from the input vision encoder but also to complement additional visual
+knowledge from VFMs, thereby enhancing its ability to reason over complex
+visual inputs. Our experiments demonstrate consistent improvements across all
+tasks on widely adopted multimodal benchmarks. Furthermore, we conduct
+comprehensive ablation studies to validate the key design choices underlying
+our framework. We believe this simple finding opens up an important direction
+for the effective integration of visual information in training MLLMs.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 9. WebExplorer: Explore and Evolve for Training Long-Horizon Web Agents ---
+Link: https://huggingface.co/papers/2509.06501
+
+## Abstract (Original)
+The paradigm of Large Language Models (LLMs) has increasingly shifted toward
+agentic applications, where web browsing capabilities are fundamental for
+retrieving information from diverse online sources. However, existing
+open-source web agents either demonstrate limited information-seeking abilities
+on complex tasks or lack transparent implementations. In this work, we identify
+that the key challenge lies in the scarcity of challenging data for information
+seeking. To address this limitation, we introduce WebExplorer: a systematic
+data generation approach using model-based exploration and iterative,
+long-to-short query evolution. This method creates challenging query-answer
+pairs that require multi-step reasoning and complex web navigation. By
+leveraging our curated high-quality dataset, we successfully develop advanced
+web agent WebExplorer-8B through supervised fine-tuning followed by
+reinforcement learning. Our model supports 128K context length and up to 100
+tool calling turns, enabling long-horizon problem solving. Across diverse
+information-seeking benchmarks, WebExplorer-8B achieves the state-of-the-art
+performance at its scale. Notably, as an 8B-sized model, WebExplorer-8B is able
+to effectively search over an average of 16 turns after RL training, achieving
+higher accuracy than WebSailor-72B on BrowseComp-en/zh and attaining the best
+performance among models up to 100B parameters on WebWalkerQA and FRAMES.
+Beyond these information-seeking tasks, our model also achieves strong
+generalization on the HLE benchmark even though it is only trained on
+knowledge-intensive QA data. These results highlight our approach as a
+practical path toward long-horizon web agents.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 10. SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning ---
+Link: https://huggingface.co/papers/2509.09674
+
+## Abstract (Original)
+Vision-Language-Action (VLA) models have recently emerged as a powerful
+paradigm for robotic manipulation. Despite substantial progress enabled by
+large-scale pretraining and supervised fine-tuning (SFT), these models face two
+fundamental challenges: (i) the scarcity and high cost of large-scale
+human-operated robotic trajectories required for SFT scaling, and (ii) limited
+generalization to tasks involving distribution shift. Recent breakthroughs in
+Large Reasoning Models (LRMs) demonstrate that reinforcement learning (RL) can
+dramatically enhance step-by-step reasoning capabilities, raising a natural
+question: Can RL similarly improve the long-horizon step-by-step action
+planning of VLA? In this work, we introduce SimpleVLA-RL, an efficient RL
+framework tailored for VLA models. Building upon veRL, we introduce
+VLA-specific trajectory sampling, scalable parallelization, multi-environment
+rendering, and optimized loss computation. When applied to OpenVLA-OFT,
+SimpleVLA-RL achieves SoTA performance on LIBERO and even outperforms pi_0
+on RoboTwin 1.0\&2.0 with the exploration-enhancing strategies we introduce.
+SimpleVLA-RL not only reduces dependence on large-scale data and enables robust
+generalization, but also remarkably surpasses SFT in real-world tasks.
+Moreover, we identify a novel phenomenon ``pushcut'' during RL training,
+wherein the policy discovers previously unseen patterns beyond those seen in
+the previous training process. Github: https://github.com/PRIME-RL/SimpleVLA-RL
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
