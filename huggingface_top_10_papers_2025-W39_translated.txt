@@ -1,0 +1,281 @@
+Hugging Face 주간 인기 논문 Top 10 (2025-W39) - 번역본
+출처: https://huggingface.co/papers/week/2025-W39
+
+--- 1. Qwen3-Omni Technical Report ---
+Link: https://huggingface.co/papers/2509.17765
+
+## Abstract (Original)
+We present Qwen3-Omni, a single multimodal model that, for the first time,
+maintains state-of-the-art performance across text, image, audio, and video
+without any degradation relative to single-modal counterparts. Qwen3-Omni
+matches the performance of same-sized single-modal models within the Qwen
+series and excels particularly on audio tasks. Across 36 audio and audio-visual
+benchmarks, Qwen3-Omni achieves open-source SOTA on 32 benchmarks and overall
+SOTA on 22, outperforming strong closed-source models such as Gemini-2.5-Pro,
+Seed-ASR, and GPT-4o-Transcribe. Qwen3-Omni adopts a Thinker-Talker MoE
+architecture that unifies perception and generation across text, images, audio,
+and video, yielding fluent text and natural real-time speech. It supports text
+interaction in 119 languages, speech understanding in 19 languages, and speech
+generation in 10 languages. To reduce first-packet latency in streaming
+synthesis, Talker autoregressively predicts discrete speech codecs using a
+multi-codebook scheme. Leveraging the representational capacity of these
+codebooks, we replace computationally intensive block-wise diffusion with a
+lightweight causal ConvNet, enabling streaming from the first codec frame. In
+cold-start settings, Qwen3-Omni achieves a theoretical end-to-end first-packet
+latency of 234 ms. To further strengthen multimodal reasoning, we introduce a
+Thinking model that explicitly reasons over inputs from any modality. Since the
+research community currently lacks a general-purpose audio captioning model, we
+fine-tuned Qwen3-Omni-30B-A3B to obtain Qwen3-Omni-30B-A3B-Captioner, which
+produces detailed, low-hallucination captions for arbitrary audio inputs.
+Qwen3-Omni-30B-A3B, Qwen3-Omni-30B-A3B-Thinking, and
+Qwen3-Omni-30B-A3B-Captioner are publicly released under the Apache 2.0
+license.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 2. Baseer: A Vision-Language Model for Arabic Document-to-Markdown OCR ---
+Link: https://huggingface.co/papers/2509.18174
+
+## Abstract (Original)
+Arabic document OCR remains a challenging task due to the language's cursive
+script, diverse fonts, diacritics, and right-to-left orientation. While modern
+Multimodal Large Language Models (MLLMs) have advanced document understanding
+for high-resource languages, their performance on Arabic remains limited. In
+this work, we introduce Baseer, a vision-language model fine- tuned
+specifically for Arabic document OCR. Leveraging a large-scale dataset
+combining synthetic and real-world documents, Baseer is trained using a
+decoder-only fine-tuning strategy to adapt a pre-trained MLLM while preserving
+general visual features. We also present Misraj-DocOCR, a high-quality,
+expert-verified benchmark designed for rigorous evaluation of Arabic OCR
+systems. Our experiments show that Baseer significantly outperforms existing
+open-source and commercial solutions, achieving a WER of 0.25 and establishing
+a new state-of-the-art in the domain of Arabic document OCR. Our results
+highlight the benefits of domain-specific adaptation of general-purpose MLLMs
+and establish a strong baseline for high-accuracy OCR on morphologically rich
+languages like Arabic.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 3. RPG: A Repository Planning Graph for Unified and Scalable Codebase
+  Generation ---
+Link: https://huggingface.co/papers/2509.16198
+
+## Abstract (Original)
+Large language models excel at function- and file-level code generation, yet
+generating complete repositories from scratch remains a fundamental challenge.
+This process demands coherent and reliable planning across proposal- and
+implementation-level stages, while natural language, due to its ambiguity and
+verbosity, is ill-suited for faithfully representing complex software
+structures. To address this, we introduce the Repository Planning Graph (RPG),
+a persistent representation that unifies proposal- and implementation-level
+planning by encoding capabilities, file structures, data flows, and functions
+in one graph. RPG replaces ambiguous natural language with an explicit
+blueprint, enabling long-horizon planning and scalable repository generation.
+Building on RPG, we develop ZeroRepo, a graph-driven framework for repository
+generation from scratch. It operates in three stages: proposal-level planning
+and implementation-level refinement to construct the graph, followed by
+graph-guided code generation with test validation. To evaluate this setting, we
+construct RepoCraft, a benchmark of six real-world projects with 1,052 tasks.
+On RepoCraft, ZeroRepo produces repositories averaging nearly 36K LOC, roughly
+3.9times the strongest baseline (Claude Code) and about 64times other
+baselines. It attains 81.5% functional coverage and a 69.7% pass rate,
+exceeding Claude Code by 27.3 and 35.8 percentage points, respectively. Further
+analysis shows that RPG models complex dependencies, enables progressively more
+sophisticated planning through near-linear scaling, and enhances LLM
+understanding of repositories, thereby accelerating agent localization.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 4. VCRL: Variance-based Curriculum Reinforcement Learning for Large
+  Language Models ---
+Link: https://huggingface.co/papers/2509.19803
+
+## Abstract (Original)
+Policy-based reinforcement learning currently plays an important role in
+improving LLMs on mathematical reasoning tasks. However, existing rollout-based
+reinforcement learning methods (GRPO, DAPO, GSPO, etc.) fail to explicitly
+consider LLMs' learning ability for samples of different difficulty levels,
+which is contrary to the human cognitive process of mathematical reasoning
+tasks from easy to difficult. Intuitively, we find that the variance of the
+rollout group's reward in RLVR partly reflects the difficulty of the current
+sample for LLMs. Samples that are too easy or too difficult have a lower
+variance, while samples with moderate difficulty have a higher variance. Based
+on this, we propose VCRL, a curriculum reinforcement learning framework that
+dynamically controls the difficulty of training samples based on the variance
+of group rewards. Experiments on five mathematical benchmarks and two models
+reveal the advantages of VCRL over the current LLM RL baselines.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 5. MMR1: Enhancing Multimodal Reasoning with Variance-Aware Sampling and
+  Open Resources ---
+Link: https://huggingface.co/papers/2509.21268
+
+## Abstract (Original)
+Large multimodal reasoning models have achieved rapid progress, but their
+advancement is constrained by two major limitations: the absence of open,
+large-scale, high-quality long chain-of-thought (CoT) data, and the instability
+of reinforcement learning (RL) algorithms in post-training. Group Relative
+Policy Optimization (GRPO), the standard framework for RL fine-tuning, is prone
+to gradient vanishing when reward variance is low, which weakens optimization
+signals and impairs convergence. This work makes three contributions: (1) We
+propose Variance-Aware Sampling (VAS), a data selection strategy guided by
+Variance Promotion Score (VPS) that combines outcome variance and trajectory
+diversity to promote reward variance and stabilize policy optimization. (2) We
+release large-scale, carefully curated resources containing ~1.6M long CoT
+cold-start data and ~15k RL QA pairs, designed to ensure quality, difficulty,
+and diversity, along with a fully reproducible end-to-end training codebase.
+(3) We open-source a family of multimodal reasoning models in multiple scales,
+establishing standardized baselines for the community. Experiments across
+mathematical reasoning benchmarks demonstrate the effectiveness of both the
+curated data and the proposed VAS. Comprehensive ablation studies and analyses
+provide further insight into the contributions of each component. In addition,
+we theoretically establish that reward variance lower-bounds the expected
+policy gradient magnitude, with VAS serving as a practical mechanism to realize
+this guarantee. Our code, data, and checkpoints are available at
+https://github.com/LengSicong/MMR1.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 6. LIMI: Less is More for Agency ---
+Link: https://huggingface.co/papers/2509.17567
+
+## Abstract (Original)
+We define Agency as the emergent capacity of AI systems to function as
+autonomous agents actively discovering problems, formulating hypotheses, and
+executing solutions through self-directed engagement with environments and
+tools. This fundamental capability marks the dawn of the Age of AI Agency,
+driven by a critical industry shift: the urgent need for AI systems that don't
+just think, but work. While current AI excels at reasoning and generating
+responses, industries demand autonomous agents that can execute tasks, operate
+tools, and drive real-world outcomes. As agentic intelligence becomes the
+defining characteristic separating cognitive systems from productive workers,
+efficiently cultivating machine autonomy becomes paramount. Current approaches
+assume that more data yields better agency, following traditional scaling laws
+from language modeling. We fundamentally challenge this paradigm. LIMI (Less Is
+More for Intelligent Agency) demonstrates that agency follows radically
+different development principles. Through strategic focus on collaborative
+software development and scientific research workflows, we show that
+sophisticated agentic intelligence can emerge from minimal but strategically
+curated demonstrations of autonomous behavior. Using only 78 carefully designed
+training samples, LIMI achieves 73.5% on comprehensive agency benchmarks,
+dramatically outperforming state-of-the-art models: Kimi-K2-Instruct (24.1%),
+DeepSeek-V3.1 (11.9%), Qwen3-235B-A22B-Instruct (27.5%), and GLM-4.5 (45.1%).
+Most strikingly, LIMI demonstrates 53.7% improvement over models trained on
+10,000 samples-achieving superior agentic intelligence with 128 times fewer
+samples. Our findings establish the Agency Efficiency Principle: machine
+autonomy emerges not from data abundance but from strategic curation of
+high-quality agentic demonstrations.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 7. SciReasoner: Laying the Scientific Reasoning Ground Across Disciplines ---
+Link: https://huggingface.co/papers/2509.21320
+
+## Abstract (Original)
+We present a scientific reasoning foundation model that aligns natural
+language with heterogeneous scientific representations. The model is pretrained
+on a 206B-token corpus spanning scientific text, pure sequences, and
+sequence-text pairs, then aligned via SFT on 40M instructions, annealed
+cold-start bootstrapping to elicit long-form chain-of-thought, and
+reinforcement learning with task-specific reward shaping, which instills
+deliberate scientific reasoning. It supports four capability families, covering
+up to 103 tasks across workflows: (i) faithful translation between text and
+scientific formats, (ii) text/knowledge extraction, (iii) property prediction,
+(iv) property classification, (v) unconditional and conditional sequence
+generation and design. Compared with specialist systems, our approach broadens
+instruction coverage, improves cross-domain generalization, and enhances
+fidelity. We detail data curation and training and show that cross-discipline
+learning strengthens transfer and downstream reliability. The model, instruct
+tuning datasets and the evaluation code are open-sourced at
+https://huggingface.co/SciReason and
+https://github.com/open-sciencelab/SciReason.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 8. Video models are zero-shot learners and reasoners ---
+Link: https://huggingface.co/papers/2509.20328
+
+## Abstract (Original)
+The remarkable zero-shot capabilities of Large Language Models (LLMs) have
+propelled natural language processing from task-specific models to unified,
+generalist foundation models. This transformation emerged from simple
+primitives: large, generative models trained on web-scale data. Curiously, the
+same primitives apply to today's generative video models. Could video models be
+on a trajectory towards general-purpose vision understanding, much like LLMs
+developed general-purpose language understanding? We demonstrate that Veo 3 can
+solve a broad variety of tasks it wasn't explicitly trained for: segmenting
+objects, detecting edges, editing images, understanding physical properties,
+recognizing object affordances, simulating tool use, and more. These abilities
+to perceive, model, and manipulate the visual world enable early forms of
+visual reasoning like maze and symmetry solving. Veo's emergent zero-shot
+capabilities indicate that video models are on a path to becoming unified,
+generalist vision foundation models.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 9. Tree Search for LLM Agent Reinforcement Learning ---
+Link: https://huggingface.co/papers/2509.21240
+
+## Abstract (Original)
+Recent advances in reinforcement learning (RL) have significantly enhanced
+the agentic capabilities of large language models (LLMs). In long-term and
+multi-turn agent tasks, existing approaches driven solely by outcome rewards
+often suffer from the problem of sparse supervision. To address the challenge,
+we propose Tree-based Group Relative Policy Optimization (Tree-GRPO), a grouped
+agent RL method based on tree search, where each tree node represents the
+complete agent interaction step. By sharing common prefixes, the tree search
+sampling increases the number of rollouts achievable within a fixed budget of
+tokens or tool calls. Moreover, we find that the tree-structured trajectory
+naturally allows the construction of step-wise process supervised signals even
+using only the outcome reward. Based on this, Tree-GRPO estimates the grouped
+relative advantages both on intra-tree and inter-tree levels. Through
+theoretical analysis, we demonstrate that the objective of intra-tree level
+group relative policy optimization is equivalent to that of step-level direct
+preference learning. Experiments across 11 datasets and 3 types of QA tasks
+demonstrate the superiority of the proposed tree-based RL over the chain-based
+RL method.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 10. Seedream 4.0: Toward Next-generation Multimodal Image Generation ---
+Link: https://huggingface.co/papers/2509.20427
+
+## Abstract (Original)
+We introduce Seedream 4.0, an efficient and high-performance multimodal image
+generation system that unifies text-to-image (T2I) synthesis, image editing,
+and multi-image composition within a single framework. We develop a highly
+efficient diffusion transformer with a powerful VAE which also can reduce the
+number of image tokens considerably. This allows for efficient training of our
+model, and enables it to fast generate native high-resolution images (e.g.,
+1K-4K). Seedream 4.0 is pretrained on billions of text-image pairs spanning
+diverse taxonomies and knowledge-centric concepts. Comprehensive data
+collection across hundreds of vertical scenarios, coupled with optimized
+strategies, ensures stable and large-scale training, with strong
+generalization. By incorporating a carefully fine-tuned VLM model, we perform
+multi-modal post-training for training both T2I and image editing tasks
+jointly. For inference acceleration, we integrate adversarial distillation,
+distribution matching, and quantization, as well as speculative decoding. It
+achieves an inference time of up to 1.8 seconds for generating a 2K image
+(without a LLM/VLM as PE model). Comprehensive evaluations reveal that Seedream
+4.0 can achieve state-of-the-art results on both T2I and multimodal image
+editing. In particular, it demonstrates exceptional multimodal capabilities in
+complex tasks, including precise image editing and in-context reasoning, and
+also allows for multi-image reference, and can generate multiple output images.
+This extends traditional T2I systems into an more interactive and
+multidimensional creative tool, pushing the boundary of generative AI for both
+creativity and professional applications. Seedream 4.0 is now accessible on
+https://www.volcengine.com/experience/ark?launch=seedream.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
