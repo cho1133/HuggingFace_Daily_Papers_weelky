@@ -1,0 +1,297 @@
+Hugging Face 주간 인기 논문 Top 10 (2025-W42) - 번역본
+출처: https://huggingface.co/papers/week/2025-W42
+
+--- 1. QeRL: Beyond Efficiency -- Quantization-enhanced Reinforcement Learning
+  for LLMs ---
+Link: https://huggingface.co/papers/2510.11696
+
+## Abstract (Original)
+We propose QeRL, a Quantization-enhanced Reinforcement Learning framework for
+large language models (LLMs). While RL is essential for LLMs' reasoning
+capabilities, it is resource-intensive, requiring substantial GPU memory and
+long rollout durations. QeRL addresses these issues by combining NVFP4
+quantization with Low-Rank Adaptation (LoRA), accelerating rollout phase of RL
+while reducing memory overhead. Beyond efficiency, our findings show that
+quantization noise increases policy entropy, enhancing exploration, and
+enabling the discovery of better strategies during RL. To further optimize
+exploration, QeRL introduces an Adaptive Quantization Noise (AQN) mechanism,
+which dynamically adjusts noise during training. Experiments demonstrate that
+QeRL delivers over 1.5 times speedup in the rollout phase. Moreover, this is
+the first framework to enable RL training of a 32B LLM on a single H100 80GB
+GPU, while delivering overall speedups for RL training. It also achieves faster
+reward growth and higher final accuracy than 16-bit LoRA and QLoRA, while
+matching the performance of full-parameter fine-tuning on mathematical
+benchmarks such as GSM8K (90.8%) and MATH 500 (77.4%) in the 7B model. These
+results establish QeRL as an efficient and effective framework for RL training
+in LLMs.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 2. Diffusion Transformers with Representation Autoencoders ---
+Link: https://huggingface.co/papers/2510.11690
+
+## Abstract (Original)
+Latent generative modeling, where a pretrained autoencoder maps pixels into a
+latent space for the diffusion process, has become the standard strategy for
+Diffusion Transformers (DiT); however, the autoencoder component has barely
+evolved. Most DiTs continue to rely on the original VAE encoder, which
+introduces several limitations: outdated backbones that compromise
+architectural simplicity, low-dimensional latent spaces that restrict
+information capacity, and weak representations that result from purely
+reconstruction-based training and ultimately limit generative quality. In this
+work, we explore replacing the VAE with pretrained representation encoders
+(e.g., DINO, SigLIP, MAE) paired with trained decoders, forming what we term
+Representation Autoencoders (RAEs). These models provide both high-quality
+reconstructions and semantically rich latent spaces, while allowing for a
+scalable transformer-based architecture. Since these latent spaces are
+typically high-dimensional, a key challenge is enabling diffusion transformers
+to operate effectively within them. We analyze the sources of this difficulty,
+propose theoretically motivated solutions, and validate them empirically. Our
+approach achieves faster convergence without auxiliary representation alignment
+losses. Using a DiT variant equipped with a lightweight, wide DDT head, we
+achieve strong image generation results on ImageNet: 1.51 FID at 256x256 (no
+guidance) and 1.13 at both 256x256 and 512x512 (with guidance). RAE offers
+clear advantages and should be the new default for diffusion transformer
+training.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 3. Spatial Forcing: Implicit Spatial Representation Alignment for
+  Vision-language-action Model ---
+Link: https://huggingface.co/papers/2510.12276
+
+## Abstract (Original)
+Vision-language-action (VLA) models have recently shown strong potential in
+enabling robots to follow language instructions and execute precise actions.
+However, most VLAs are built upon vision-language models pretrained solely on
+2D data, which lack accurate spatial awareness and hinder their ability to
+operate in the 3D physical world. Existing solutions attempt to incorporate
+explicit 3D sensor inputs such as depth maps or point clouds, but these
+approaches face challenges due to sensor noise, hardware heterogeneity, and
+incomplete depth coverage in existing datasets. Alternative methods that
+estimate 3D cues from 2D images also suffer from the limited performance of
+depth estimators.We propose Spatial Forcing (SF), a simple yet effective
+alignment strategy that implicitly forces VLA models to develop spatial
+comprehension capabilities without relying on explicit 3D inputs or depth
+estimators. SF aligns intermediate visual embeddings of VLAs with geometric
+representations produced by pretrained 3D foundation models. By enforcing
+alignment at intermediate layers, SF guides VLAs to encode richer spatial
+representations that enhance action precision.Extensive experiments in
+simulation and real-world environments demonstrate that SF achieves
+state-of-the-art results, surpassing both 2D- and 3D-based VLAs. SF further
+accelerates training by up to 3.8x and improves data efficiency across diverse
+robotic tasks. Project page is at https://spatial-forcing.github.io/
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 4. D2E: Scaling Vision-Action Pretraining on Desktop Data for Transfer to
+  Embodied AI ---
+Link: https://huggingface.co/papers/2510.05684
+
+## Abstract (Original)
+Large language models leverage internet-scale text data, yet embodied AI
+remains constrained by the prohibitive costs of physical trajectory collection.
+Desktop environments -- particularly gaming -- offer a compelling alternative:
+they provide rich sensorimotor interactions at scale while maintaining the
+structured observation-action coupling essential for embodied learning. We
+present D2E (Desktop to Embodied AI), a framework that demonstrates desktop
+interactions can serve as an effective pretraining substrate for robotics
+embodied AI tasks. Unlike prior work that remained domain-specific (e.g., VPT
+for Minecraft) or kept data proprietary (e.g., SIMA), D2E establishes a
+complete pipeline from scalable desktop data collection to verified transfer in
+embodied domains. Our framework comprises three components: (1) the OWA Toolkit
+that unifies diverse desktop interactions into a standardized format with 152x
+compression, (2) the Generalist-IDM that achieves strong zero-shot
+generalization across unseen games through timestamp-based event prediction,
+enabling internet-scale pseudo-labeling, and (3) VAPT that transfers
+desktop-pretrained representations to physical manipulation and navigation.
+Using 1.3K+ hours of data (259 hours of human demonstrations, and 1K+ hours of
+pseudo-labeled gameplay), we achieve a total of 96.6% success rate on LIBERO
+manipulation and 83.3% on CANVAS navigation benchmarks. This validates that
+sensorimotor primitives in digital interactions exhibit sufficient invariance
+to transfer meaningfully to physical embodied tasks, establishing desktop
+pretraining as a practical paradigm for robotics. We will make all our work
+public, including the OWA toolkit, datasets of human-collected and
+pseudo-labeled, and VAPT-trained models available at
+https://worv-ai.github.io/d2e/
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 5. Thinking with Camera: A Unified Multimodal Model for Camera-Centric
+  Understanding and Generation ---
+Link: https://huggingface.co/papers/2510.08673
+
+## Abstract (Original)
+Camera-centric understanding and generation are two cornerstones of spatial
+intelligence, yet they are typically studied in isolation. We present Puffin, a
+unified camera-centric multimodal model that extends spatial awareness along
+the camera dimension. Puffin integrates language regression and diffusion-based
+generation to interpret and create scenes from arbitrary viewpoints. To bridge
+the modality gap between cameras and vision-language, we introduce a novel
+paradigm that treats camera as language, enabling thinking with camera. This
+guides the model to align spatially grounded visual cues with photographic
+terminology while reasoning across geometric context. Puffin is trained on
+Puffin-4M, a large-scale dataset of 4 million vision-language-camera triplets.
+We incorporate both global camera parameters and pixel-wise camera maps,
+yielding flexible and reliable spatial generation. Experiments demonstrate
+Puffin superior performance over specialized models for camera-centric
+generation and understanding. With instruction tuning, Puffin generalizes to
+diverse cross-view tasks such as spatial imagination, world exploration, and
+photography guidance. We will release the code, models, dataset pipeline, and
+benchmark to advance multimodal spatial intelligence research.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 6. When Models Lie, We Learn: Multilingual Span-Level Hallucination
+  Detection with PsiloQA ---
+Link: https://huggingface.co/papers/2510.04849
+
+## Abstract (Original)
+Hallucination detection remains a fundamental challenge for the safe and
+reliable deployment of large language models (LLMs), especially in applications
+requiring factual accuracy. Existing hallucination benchmarks often operate at
+the sequence level and are limited to English, lacking the fine-grained,
+multilingual supervision needed for a comprehensive evaluation. In this work,
+we introduce PsiloQA, a large-scale, multilingual dataset annotated with
+span-level hallucinations across 14 languages. PsiloQA is constructed through
+an automated three-stage pipeline: generating question-answer pairs from
+Wikipedia using GPT-4o, eliciting potentially hallucinated answers from diverse
+LLMs in a no-context setting, and automatically annotating hallucinated spans
+using GPT-4o by comparing against golden answers and retrieved context. We
+evaluate a wide range of hallucination detection methods -- including
+uncertainty quantification, LLM-based tagging, and fine-tuned encoder models --
+and show that encoder-based models achieve the strongest performance across
+languages. Furthermore, PsiloQA demonstrates effective cross-lingual
+generalization and supports robust knowledge transfer to other benchmarks, all
+while being significantly more cost-efficient than human-annotated datasets.
+Our dataset and results advance the development of scalable, fine-grained
+hallucination detection in multilingual settings.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 7. Advancing End-to-End Pixel Space Generative Modeling via Self-supervised
+  Pre-training ---
+Link: https://huggingface.co/papers/2510.12586
+
+## Abstract (Original)
+Pixel-space generative models are often more difficult to train and generally
+underperform compared to their latent-space counterparts, leaving a persistent
+performance and efficiency gap. In this paper, we introduce a novel two-stage
+training framework that closes this gap for pixel-space diffusion and
+consistency models. In the first stage, we pre-train encoders to capture
+meaningful semantics from clean images while aligning them with points along
+the same deterministic sampling trajectory, which evolves points from the prior
+to the data distribution. In the second stage, we integrate the encoder with a
+randomly initialized decoder and fine-tune the complete model end-to-end for
+both diffusion and consistency models. Our training framework demonstrates
+strong empirical performance on ImageNet dataset. Specifically, our diffusion
+model reaches an FID of 2.04 on ImageNet-256 and 2.35 on ImageNet-512 with 75
+number of function evaluations (NFE), surpassing prior pixel-space methods by a
+large margin in both generation quality and efficiency while rivaling leading
+VAE-based models at comparable training cost. Furthermore, on ImageNet-256, our
+consistency model achieves an impressive FID of 8.82 in a single sampling step,
+significantly surpassing its latent-space counterpart. To the best of our
+knowledge, this marks the first successful training of a consistency model
+directly on high-resolution images without relying on pre-trained VAEs or
+diffusion models.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 8. Agentic Entropy-Balanced Policy Optimization ---
+Link: https://huggingface.co/papers/2510.14545
+
+## Abstract (Original)
+Recently, Agentic Reinforcement Learning (Agentic RL) has made significant
+progress in incentivizing the multi-turn, long-horizon tool-use capabilities of
+web agents. While mainstream agentic RL algorithms autonomously explore
+high-uncertainty tool-call steps under the guidance of entropy, excessive
+reliance on entropy signals can impose further constraints, leading to the
+training collapse. In this paper, we delve into the challenges caused by
+entropy and propose the Agentic Entropy-Balanced Policy Optimization (AEPO), an
+agentic RL algorithm designed to balance entropy in both the rollout and policy
+update phases. AEPO comprises two core components: (1) a dynamic
+entropy-balanced rollout mechanism that adaptively allocate global and branch
+sampling budget through entropy pre-monitoring, while imposing a branch penalty
+on consecutive high-entropy tool-call steps to prevent over-branching issues;
+and (2) Entropy-Balanced Policy Optimization that inserts a stop-gradient
+operation into the high-entropy clipping term to preserve and properly rescale
+gradients on high-entropy tokens, while incorporating entropy-aware advantage
+estimation to prioritize learning on high-uncertainty tokens. Results across 14
+challenging datasets show that AEPO consistently outperforms 7 mainstream RL
+algorithms. With just 1K RL samples, Qwen3-14B with AEPO achieves impressive
+results: 47.6% on GAIA, 11.2% on Humanity's Last Exam, and 43.0% on WebWalker
+for Pass@1; 65.0% on GAIA, 26.0% on Humanity's Last Exam, and 70.0% on
+WebWalker for Pass@5. Further analysis reveals that AEPO improves rollout
+sampling diversity while maintaining stable policy entropy, facilitating
+scalable web agent training.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 9. Scaling Language-Centric Omnimodal Representation Learning ---
+Link: https://huggingface.co/papers/2510.11693
+
+## Abstract (Original)
+Recent multimodal embedding approaches leveraging multimodal large language
+models (MLLMs) fine-tuned with contrastive learning (CL) have shown promising
+results, yet the underlying reasons behind their superiority remain
+underexplored. This work argues that a crucial advantage of MLLM-based
+approaches stems from implicit cross-modal alignment achieved during generative
+pretraining, where the language decoder learns to exploit multimodal signals
+within a shared representation space for generating unimodal outputs. Through
+analysis of anisotropy and kernel similarity structure, we empirically confirm
+that latent alignment emerges within MLLM representations, allowing CL to serve
+as a lightweight refinement stage. Leveraging this insight, we propose a
+Language-Centric Omnimodal Embedding framework, termed LCO-Emb. Extensive
+experiments across diverse backbones and benchmarks demonstrate its
+effectiveness, achieving state-of-the-art performance across modalities.
+Furthermore, we identify a Generation-Representation Scaling Law (GRSL),
+showing that the representational capabilities gained through contrastive
+refinement scales positively with the MLLM's generative capabilities. This
+suggests that improving generative abilities evolves as an effective paradigm
+for enhancing representation quality. We provide a theoretical explanation of
+GRSL, which formally links the MLLM's generative quality to the upper bound on
+its representation performance, and validate it on a challenging, low-resource
+visual-document retrieval task, showing that continual generative pretraining
+before CL can further enhance the potential of a model's embedding
+capabilities. Codes, models, and resources are available at
+https://github.com/LCO-Embedding/LCO-Embedding.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 10. DITING: A Multi-Agent Evaluation Framework for Benchmarking Web Novel
+  Translation ---
+Link: https://huggingface.co/papers/2510.09116
+
+## Abstract (Original)
+Large language models (LLMs) have substantially advanced machine translation
+(MT), yet their effectiveness in translating web novels remains unclear.
+Existing benchmarks rely on surface-level metrics that fail to capture the
+distinctive traits of this genre. To address these gaps, we introduce DITING,
+the first comprehensive evaluation framework for web novel translation,
+assessing narrative and cultural fidelity across six dimensions: idiom
+translation, lexical ambiguity, terminology localization, tense consistency,
+zero-pronoun resolution, and cultural safety, supported by over 18K
+expert-annotated Chinese-English sentence pairs. We further propose AgentEval,
+a reasoning-driven multi-agent evaluation framework that simulates expert
+deliberation to assess translation quality beyond lexical overlap, achieving
+the highest correlation with human judgments among seven tested automatic
+metrics. To enable metric comparison, we develop MetricAlign, a meta-evaluation
+dataset of 300 sentence pairs annotated with error labels and scalar quality
+scores. Comprehensive evaluation of fourteen open, closed, and commercial
+models reveals that Chinese-trained LLMs surpass larger foreign counterparts,
+and that DeepSeek-V3 delivers the most faithful and stylistically coherent
+translations. Our work establishes a new paradigm for exploring LLM-based web
+novel translation and provides public resources to advance future research.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
