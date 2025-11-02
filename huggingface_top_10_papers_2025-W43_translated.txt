@@ -1,0 +1,281 @@
+Hugging Face 주간 인기 논문 Top 10 (2025-W43) - 번역본
+출처: https://huggingface.co/papers/week/2025-W43
+
+--- 1. A Theoretical Study on Bridging Internal Probability and
+  Self-Consistency for LLM Reasoning ---
+Link: https://huggingface.co/papers/2510.15444
+
+## Abstract (Original)
+Test-time scaling seeks to improve the reasoning performance of large
+language models (LLMs) by adding computational resources. A prevalent approach
+within the field is sampling-based test-time scaling methods, which enhance
+reasoning by generating multiple reasoning paths for a given input during
+inference. However, despite its practical success, the theoretical foundations
+remain underexplored. In this paper, we provide the first theoretical framework
+for analyzing sampling-based test-time scaling methods, grounded in the
+perspective of confidence estimation. Based on the framework, we analyze two
+dominant paradigms: self-consistency and perplexity, and reveal key
+limitations: self-consistency suffers from high estimation error while
+perplexity exhibits substantial modeling error and possible degradation of the
+estimation error convergence. To address these limitations, we introduce RPC, a
+hybrid method that leverages our theoretical insights through two key
+components: Perplexity Consistency and Reasoning Pruning. Perplexity
+Consistency combines the strengths of self-consistency and perplexity, boosting
+the convergence rate of estimation error from linear to exponential while
+preserving model error. Reasoning Pruning prevents degradation by eliminating
+low-probability reasoning paths. Both theoretical analysis and empirical
+results across seven benchmark datasets demonstrate that RPC has a strong
+potential for reducing reasoning error. Notably, RPC achieves reasoning
+performance comparable to self-consistency while not only enhancing confidence
+reliability but also reducing sampling costs by 50%. The code and resources are
+available at https://wnjxyk.github.io/RPC.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 2. Efficient Long-context Language Model Training by Core Attention
+  Disaggregation ---
+Link: https://huggingface.co/papers/2510.18121
+
+## Abstract (Original)
+We present core attention disaggregation (CAD), a technique that improves
+long-context large language model training by decoupling the core attention
+computation, softmax(QK^T)V, from the rest of the model and executing it on a
+separate pool of devices. In existing systems, core attention is colocated with
+other layers; at long context lengths, its quadratic compute growth compared to
+the near-linear growth of other components causes load imbalance and stragglers
+across data and pipeline parallel groups. CAD is enabled by two observations.
+First, core attention is stateless: it has no trainable parameters and only
+minimal transient data, so balancing reduces to scheduling compute-bound tasks.
+Second, it is composable: modern attention kernels retain high efficiency when
+processing fused batches of token-level shards with arbitrary lengths. CAD
+partitions core attention into token-level tasks and dispatches them to
+dedicated attention servers, which dynamically rebatch tasks to equalize
+compute without sacrificing kernel efficiency. We implement CAD in a system
+called DistCA, which uses a ping-pong execution scheme to fully overlap
+communication with computation and in-place execution on attention servers to
+reduce memory use. On 512 H200 GPUs and context lengths up to 512k tokens,
+DistCA improves end-to-end training throughput by up to 1.35x, eliminates data
+and pipeline parallel stragglers, and achieves near-perfect compute and memory
+balance.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 3. LightMem: Lightweight and Efficient Memory-Augmented Generation ---
+Link: https://huggingface.co/papers/2510.18866
+
+## Abstract (Original)
+Despite their remarkable capabilities, Large Language Models (LLMs) struggle
+to effectively leverage historical interaction information in dynamic and
+complex environments. Memory systems enable LLMs to move beyond stateless
+interactions by introducing persistent information storage, retrieval, and
+utilization mechanisms. However, existing memory systems often introduce
+substantial time and computational overhead. To this end, we introduce a new
+memory system called LightMem, which strikes a balance between the performance
+and efficiency of memory systems. Inspired by the Atkinson-Shiffrin model of
+human memory, LightMem organizes memory into three complementary stages. First,
+cognition-inspired sensory memory rapidly filters irrelevant information
+through lightweight compression and groups information according to their
+topics. Next, topic-aware short-term memory consolidates these topic-based
+groups, organizing and summarizing content for more structured access. Finally,
+long-term memory with sleep-time update employs an offline procedure that
+decouples consolidation from online inference. Experiments on LongMemEval with
+GPT and Qwen backbones show that LightMem outperforms strong baselines in
+accuracy (up to 10.9% gains) while reducing token usage by up to 117x, API
+calls by up to 159x, and runtime by over 12x. The code is available at
+https://github.com/zjunlp/LightMem.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 4. Every Attention Matters: An Efficient Hybrid Architecture for
+  Long-Context Reasoning ---
+Link: https://huggingface.co/papers/2510.19338
+
+## Abstract (Original)
+In this technical report, we present the Ring-linear model series,
+specifically including Ring-mini-linear-2.0 and Ring-flash-linear-2.0.
+Ring-mini-linear-2.0 comprises 16B parameters and 957M activations, while
+Ring-flash-linear-2.0 contains 104B parameters and 6.1B activations. Both
+models adopt a hybrid architecture that effectively integrates linear attention
+and softmax attention, significantly reducing I/O and computational overhead in
+long-context inference scenarios. Compared to a 32 billion parameter dense
+model, this series reduces inference cost to 1/10, and compared to the original
+Ring series, the cost is also reduced by over 50%. Furthermore, through
+systematic exploration of the ratio between different attention mechanisms in
+the hybrid architecture, we have identified the currently optimal model
+structure. Additionally, by leveraging our self-developed high-performance FP8
+operator library-linghe, overall training efficiency has been improved by 50%.
+Benefiting from the high alignment between the training and inference engine
+operators, the models can undergo long-term, stable, and highly efficient
+optimization during the reinforcement learning phase, consistently maintaining
+SOTA performance across multiple challenging complex reasoning benchmarks.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 5. DeepAnalyze: Agentic Large Language Models for Autonomous Data Science ---
+Link: https://huggingface.co/papers/2510.16872
+
+## Abstract (Original)
+Autonomous data science, from raw data sources to analyst-grade deep research
+reports, has been a long-standing challenge, and is now becoming feasible with
+the emergence of powerful large language models (LLMs). Recent workflow-based
+data agents have shown promising results on specific data tasks but remain
+fundamentally limited in achieving fully autonomous data science due to their
+reliance on predefined workflows. In this paper, we introduce DeepAnalyze-8B,
+the first agentic LLM designed for autonomous data science, capable of
+automatically completing the end-toend pipeline from data sources to
+analyst-grade deep research reports. To tackle high-complexity data science
+tasks, we propose a curriculum-based agentic training paradigm that emulates
+the learning trajectory of human data scientists, enabling LLMs to
+progressively acquire and integrate multiple capabilities in real-world
+environments. We also introduce a data-grounded trajectory synthesis framework
+that constructs high-quality training data. Through agentic training,
+DeepAnalyze learns to perform a broad spectrum of data tasks, ranging from data
+question answering and specialized analytical tasks to open-ended data
+research. Experiments demonstrate that, with only 8B parameters, DeepAnalyze
+outperforms previous workflow-based agents built on most advanced proprietary
+LLMs. The model, code, and training data of DeepAnalyze are open-sourced,
+paving the way toward autonomous data science.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 6. World-in-World: World Models in a Closed-Loop World ---
+Link: https://huggingface.co/papers/2510.18135
+
+## Abstract (Original)
+Generative world models (WMs) can now simulate worlds with striking visual
+realism, which naturally raises the question of whether they can endow embodied
+agents with predictive perception for decision making. Progress on this
+question has been limited by fragmented evaluation: most existing benchmarks
+adopt open-loop protocols that emphasize visual quality in isolation, leaving
+the core issue of embodied utility unresolved, i.e., do WMs actually help
+agents succeed at embodied tasks? To address this gap, we introduce
+World-in-World, the first open platform that benchmarks WMs in a closed-loop
+world that mirrors real agent-environment interactions. World-in-World provides
+a unified online planning strategy and a standardized action API, enabling
+heterogeneous WMs for decision making. We curate four closed-loop environments
+that rigorously evaluate diverse WMs, prioritize task success as the primary
+metric, and move beyond the common focus on visual quality; we also present the
+first data scaling law for world models in embodied settings. Our study
+uncovers three surprises: (1) visual quality alone does not guarantee task
+success, controllability matters more; (2) scaling post-training with
+action-observation data is more effective than upgrading the pretrained video
+generators; and (3) allocating more inference-time compute allows WMs to
+substantially improve closed-loop performance.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 7. OmniVinci: Enhancing Architecture and Data for Omni-Modal Understanding
+  LLM ---
+Link: https://huggingface.co/papers/2510.15870
+
+## Abstract (Original)
+Advancing machine intelligence requires developing the ability to perceive
+across multiple modalities, much as humans sense the world. We introduce
+OmniVinci, an initiative to build a strong, open-source, omni-modal LLM. We
+carefully study the design choices across model architecture and data curation.
+For model architecture, we present three key innovations: (i) OmniAlignNet for
+strengthening alignment between vision and audio embeddings in a shared
+omni-modal latent space; (ii) Temporal Embedding Grouping for capturing
+relative temporal alignment between vision and audio signals; and (iii)
+Constrained Rotary Time Embedding for encoding absolute temporal information in
+omni-modal embeddings. We introduce a curation and synthesis pipeline that
+generates 24M single-modal and omni-modal conversations. We find that
+modalities reinforce one another in both perception and reasoning. Our model,
+OmniVinci, outperforms Qwen2.5-Omni with +19.05 on DailyOmni (cross-modal
+understanding), +1.7 on MMAR (audio), and +3.9 on Video-MME (vision), while
+using just 0.2T training tokens - a 6 times reduction compared to
+Qwen2.5-Omni's 1.2T. We finally demonstrate omni-modal advantages in downstream
+applications spanning robotics, medical AI, and smart factory.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 8. BAPO: Stabilizing Off-Policy Reinforcement Learning for LLMs via
+  Balanced Policy Optimization with Adaptive Clipping ---
+Link: https://huggingface.co/papers/2510.18927
+
+## Abstract (Original)
+Reinforcement learning (RL) has recently become the core paradigm for
+aligning and strengthening large language models (LLMs). Yet, applying RL in
+off-policy settings--where stale data from past policies are used for
+training--improves sample efficiency, but remains challenging: policy entropy
+declines sharply, optimization often becomes unstable and may even collapse.
+Through theoretical and empirical analysis, we identify two key insights: (i)
+an imbalance in optimization, where negative-advantage samples dominate the
+policy gradient, suppressing useful behaviors and risking gradient explosions;
+and (ii) the derived Entropy-Clip Rule, which reveals that the fixed clipping
+mechanism in PPO-like objectives systematically blocks entropy-increasing
+updates, thereby driving the policy toward over-exploitation at the expense of
+exploration. Building on these insights, we propose BAlanced Policy
+Optimization with Adaptive Clipping (BAPO), a simple yet effective method that
+dynamically adjusts clipping bounds to adaptively re-balance positive and
+negative contributions, preserve entropy, and stabilize RL optimization. Across
+diverse off-policy scenarios--including sample replay and partial rollout--BAPO
+achieves fast, stable, and data-efficient training. On AIME 2024 and AIME 2025
+benchmarks, our 7B BAPO model surpasses open-source counterparts such as
+SkyWork-OR1-7B, while our 32B BAPO model not only achieves state-of-the-art
+results among models of the same scale but also outperforms leading proprietary
+systems like o3-mini and Gemini-2.5-Flash-Thinking.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 9. DeepSeek-OCR: Contexts Optical Compression ---
+Link: https://huggingface.co/papers/2510.18234
+
+## Abstract (Original)
+We present DeepSeek-OCR as an initial investigation into the feasibility of
+compressing long contexts via optical 2D mapping. DeepSeek-OCR consists of two
+components: DeepEncoder and DeepSeek3B-MoE-A570M as the decoder. Specifically,
+DeepEncoder serves as the core engine, designed to maintain low activations
+under high-resolution input while achieving high compression ratios to ensure
+an optimal and manageable number of vision tokens. Experiments show that when
+the number of text tokens is within 10 times that of vision tokens (i.e., a
+compression ratio < 10x), the model can achieve decoding (OCR) precision of
+97%. Even at a compression ratio of 20x, the OCR accuracy still remains at
+about 60%. This shows considerable promise for research areas such as
+historical long-context compression and memory forgetting mechanisms in LLMs.
+Beyond this, DeepSeek-OCR also demonstrates high practical value. On
+OmniDocBench, it surpasses GOT-OCR2.0 (256 tokens/page) using only 100 vision
+tokens, and outperforms MinerU2.0 (6000+ tokens per page on average) while
+utilizing fewer than 800 vision tokens. In production, DeepSeek-OCR can
+generate training data for LLMs/VLMs at a scale of 200k+ pages per day (a
+single A100-40G). Codes and model weights are publicly accessible at
+http://github.com/deepseek-ai/DeepSeek-OCR.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 10. Human-Agent Collaborative Paper-to-Page Crafting for Under $0.1 ---
+Link: https://huggingface.co/papers/2510.19600
+
+## Abstract (Original)
+In the quest for scientific progress, communicating research is as vital as
+the discovery itself. Yet, researchers are often sidetracked by the manual,
+repetitive chore of building project webpages to make their dense papers
+accessible. While automation has tackled static slides and posters, the
+dynamic, interactive nature of webpages has remained an unaddressed challenge.
+To bridge this gap, we reframe the problem, arguing that the solution lies not
+in a single command, but in a collaborative, hierarchical process. We introduce
+AutoPage, a novel multi-agent system that embodies this philosophy.
+AutoPage deconstructs paper-to-page creation into a coarse-to-fine pipeline
+from narrative planning to multimodal content generation and interactive
+rendering. To combat AI hallucination, dedicated "Checker" agents verify each
+step against the source paper, while optional human checkpoints ensure the
+final product aligns perfectly with the author's vision, transforming the
+system from a mere tool into a powerful collaborative assistant. To rigorously
+validate our approach, we also construct PageBench, the first
+benchmark for this new task. Experiments show AutoPage not only generates
+high-quality, visually appealing pages but does so with remarkable efficiency
+in under 15 minutes for less than \0.1. Code and dataset will be released at
+https://mqleet.github.io/AutoPage_ProjectPage/{Webpage}$.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
