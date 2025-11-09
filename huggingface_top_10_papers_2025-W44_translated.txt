@@ -1,0 +1,277 @@
+Hugging Face 주간 인기 논문 Top 10 (2025-W44) - 번역본
+출처: https://huggingface.co/papers/week/2025-W44
+
+--- 1. Scaling Latent Reasoning via Looped Language Models ---
+Link: https://huggingface.co/papers/2510.25741
+
+## Abstract (Original)
+Modern LLMs are trained to "think" primarily via explicit text generation,
+such as chain-of-thought (CoT), which defers reasoning to post-training and
+under-leverages pre-training data. We present and open-source Ouro, named after
+the recursive Ouroboros, a family of pre-trained Looped Language Models
+(LoopLM) that instead build reasoning into the pre-training phase through (i)
+iterative computation in latent space, (ii) an entropy-regularized objective
+for learned depth allocation, and (iii) scaling to 7.7T tokens. Ouro 1.4B and
+2.6B models enjoy superior performance that match the results of up to 12B SOTA
+LLMs across a wide range of benchmarks. Through controlled experiments, we show
+this advantage stems not from increased knowledge capacity, but from superior
+knowledge manipulation capabilities. We also show that LoopLM yields reasoning
+traces more aligned with final outputs than explicit CoT. We hope our results
+show the potential of LoopLM as a novel scaling direction in the reasoning era.
+Our model could be found in: http://ouro-llm.github.io.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 2. Concerto: Joint 2D-3D Self-Supervised Learning Emerges Spatial
+  Representations ---
+Link: https://huggingface.co/papers/2510.23607
+
+## Abstract (Original)
+Humans learn abstract concepts through multisensory synergy, and once formed,
+such representations can often be recalled from a single modality. Inspired by
+this principle, we introduce Concerto, a minimalist simulation of human concept
+learning for spatial cognition, combining 3D intra-modal self-distillation with
+2D-3D cross-modal joint embedding. Despite its simplicity, Concerto learns more
+coherent and informative spatial features, as demonstrated by zero-shot
+visualizations. It outperforms both standalone SOTA 2D and 3D self-supervised
+models by 14.2% and 4.8%, respectively, as well as their feature concatenation,
+in linear probing for 3D scene perception. With full fine-tuning, Concerto sets
+new SOTA results across multiple scene understanding benchmarks (e.g., 80.7%
+mIoU on ScanNet). We further present a variant of Concerto tailored for
+video-lifted point cloud spatial understanding, and a translator that linearly
+projects Concerto representations into CLIP's language space, enabling
+open-world perception. These results highlight that Concerto emerges spatial
+representations with superior fine-grained geometric and semantic consistency.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 3. ReCode: Unify Plan and Action for Universal Granularity Control ---
+Link: https://huggingface.co/papers/2510.23564
+
+## Abstract (Original)
+Real-world tasks require decisions at varying granularities, and humans excel
+at this by leveraging a unified cognitive representation where planning is
+fundamentally understood as a high-level form of action. However, current Large
+Language Model (LLM)-based agents lack this crucial capability to operate
+fluidly across decision granularities. This limitation stems from existing
+paradigms that enforce a rigid separation between high-level planning and
+low-level action, which impairs dynamic adaptability and limits generalization.
+We propose ReCode (Recursive Code Generation), a novel paradigm that addresses
+this limitation by unifying planning and action within a single code
+representation. In this representation, ReCode treats high-level plans as
+abstract placeholder functions, which the agent then recursively decomposes
+into finer-grained sub-functions until reaching primitive actions. This
+recursive approach dissolves the rigid boundary between plan and action,
+enabling the agent to dynamically control its decision granularity.
+Furthermore, the recursive structure inherently generates rich,
+multi-granularity training data, enabling models to learn hierarchical
+decision-making processes. Extensive experiments show ReCode significantly
+surpasses advanced baselines in inference performance and demonstrates
+exceptional data efficiency in training, validating our core insight that
+unifying planning and action through recursive code generation is a powerful
+and effective approach to achieving universal granularity control. The code is
+available at https://github.com/FoundationAgents/ReCode.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 4. The End of Manual Decoding: Towards Truly End-to-End Language Models ---
+Link: https://huggingface.co/papers/2510.26697
+
+## Abstract (Original)
+The "end-to-end" label for LLMs is a misnomer. In practice, they depend on a
+non-differentiable decoding process that requires laborious, hand-tuning of
+hyperparameters like temperature and top-p. This paper introduces AutoDeco, a
+novel architecture that enables truly "end-to-end" generation by learning to
+control its own decoding strategy. We augment the standard transformer with
+lightweight heads that, at each step, dynamically predict context-specific
+temperature and top-p values alongside the next-token logits. This approach
+transforms decoding into a parametric, token-level process, allowing the model
+to self-regulate its sampling strategy within a single forward pass.
+  Through extensive experiments on eight benchmarks, we demonstrate that
+AutoDeco not only significantly outperforms default decoding strategies but
+also achieves performance comparable to an oracle-tuned baseline derived from
+"hacking the test set"-a practical upper bound for any static method.
+Crucially, we uncover an emergent capability for instruction-based decoding
+control: the model learns to interpret natural language commands (e.g.,
+"generate with low randomness") and adjusts its predicted temperature and top-p
+on a token-by-token basis, opening a new paradigm for steerable and interactive
+LLM decoding.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 5. Emu3.5: Native Multimodal Models are World Learners ---
+Link: https://huggingface.co/papers/2510.26583
+
+## Abstract (Original)
+We introduce Emu3.5, a large-scale multimodal world model that natively
+predicts the next state across vision and language. Emu3.5 is pre-trained
+end-to-end with a unified next-token prediction objective on a corpus of
+vision-language interleaved data containing over 10 trillion tokens, primarily
+derived from sequential frames and transcripts of internet videos. The model
+naturally accepts interleaved vision-language inputs and generates interleaved
+vision-language outputs. Emu3.5 is further post-trained with large-scale
+reinforcement learning to enhance multimodal reasoning and generation. To
+improve inference efficiency, we propose Discrete Diffusion Adaptation (DiDA),
+which converts token-by-token decoding into bidirectional parallel prediction,
+accelerating per-image inference by about 20x without sacrificing performance.
+Emu3.5 exhibits strong native multimodal capabilities, including long-horizon
+vision-language generation, any-to-image (X2I) generation, and complex
+text-rich image generation. It also exhibits generalizable world-modeling
+abilities, enabling spatiotemporally consistent world exploration and
+open-world embodied manipulation across diverse scenarios and tasks. For
+comparison, Emu3.5 achieves performance comparable to Gemini 2.5 Flash Image
+(Nano Banana) on image generation and editing tasks and demonstrates superior
+results on a suite of interleaved generation tasks. We open-source Emu3.5 at
+https://github.com/baaivision/Emu3.5 to support community research.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 6. Kimi Linear: An Expressive, Efficient Attention Architecture ---
+Link: https://huggingface.co/papers/2510.26692
+
+## Abstract (Original)
+We introduce Kimi Linear, a hybrid linear attention architecture that, for
+the first time, outperforms full attention under fair comparisons across
+various scenarios -- including short-context, long-context, and reinforcement
+learning (RL) scaling regimes. At its core lies Kimi Delta Attention (KDA), an
+expressive linear attention module that extends Gated DeltaNet with a
+finer-grained gating mechanism, enabling more effective use of limited
+finite-state RNN memory. Our bespoke chunkwise algorithm achieves high hardware
+efficiency through a specialized variant of the Diagonal-Plus-Low-Rank (DPLR)
+transition matrices, which substantially reduces computation compared to the
+general DPLR formulation while remaining more consistent with the classical
+delta rule.
+  We pretrain a Kimi Linear model with 3B activated parameters and 48B total
+parameters, based on a layerwise hybrid of KDA and Multi-Head Latent Attention
+(MLA). Our experiments show that with an identical training recipe, Kimi Linear
+outperforms full MLA with a sizeable margin across all evaluated tasks, while
+reducing KV cache usage by up to 75% and achieving up to 6 times decoding
+throughput for a 1M context. These results demonstrate that Kimi Linear can be
+a drop-in replacement for full attention architectures with superior
+performance and efficiency, including tasks with longer input and output
+lengths.
+  To support further research, we open-source the KDA kernel and vLLM
+implementations, and release the pre-trained and instruction-tuned model
+checkpoints.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 7. InteractComp: Evaluating Search Agents With Ambiguous Queries ---
+Link: https://huggingface.co/papers/2510.24668
+
+## Abstract (Original)
+Language agents have demonstrated remarkable potential in web search and
+information retrieval. However, these search agents assume user queries are
+complete and unambiguous, an assumption that diverges from reality where users
+begin with incomplete queries requiring clarification through interaction. Yet
+most agents lack interactive mechanisms during the search process, and existing
+benchmarks cannot assess this capability. To address this gap, we introduce
+InteractComp, a benchmark designed to evaluate whether search agents can
+recognize query ambiguity and actively interact to resolve it during search.
+Following the principle of easy to verify, interact to disambiguate, we
+construct 210 expert-curated questions across 9 domains through a
+target-distractor methodology that creates genuine ambiguity resolvable only
+through interaction. Evaluation of 17 models reveals striking failure: the best
+model achieves only 13.73% accuracy despite 71.50% with complete context,
+exposing systematic overconfidence rather than reasoning deficits. Forced
+interaction produces dramatic gains, demonstrating latent capability current
+strategies fail to engage. Longitudinal analysis shows interaction capabilities
+stagnated over 15 months while search performance improved seven-fold,
+revealing a critical blind spot. This stagnation, coupled with the immediate
+feedback inherent to search tasks, makes InteractComp a valuable resource for
+both evaluating and training interaction capabilities in search agents. The
+code is available at https://github.com/FoundationAgents/InteractComp.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 8. JanusCoder: Towards a Foundational Visual-Programmatic Interface for
+  Code Intelligence ---
+Link: https://huggingface.co/papers/2510.23538
+
+## Abstract (Original)
+The scope of neural code intelligence is rapidly expanding beyond text-based
+source code to encompass the rich visual outputs that programs generate. This
+visual dimension is critical for advanced applications like flexible content
+generation and precise, program-driven editing of visualizations. However,
+progress has been impeded by the scarcity of high-quality multimodal code data,
+a bottleneck stemming from challenges in synthesis and quality assessment. To
+address these challenges, we make contributions from both a data and modeling
+perspective. We first introduce a complete synthesis toolkit that leverages
+reciprocal synergies between data modalities to efficiently produce a
+large-scale, high-quality corpus spanning from standard charts to complex
+interactive web UIs and code-driven animations. Leveraging this toolkit, we
+construct JanusCode-800K, the largest multimodal code corpus to date. This
+powers the training of our models, JanusCoder and JanusCoderV, which establish
+a visual-programmatic interface for generating code from textual instructions,
+visual inputs, or a combination of both. Our unified model is a departure from
+existing approaches that build specialized models for isolated tasks. Extensive
+experiments on both text-centric and vision-centric coding tasks demonstrate
+the superior performance of the JanusCoder series, with our 7B to 14B scale
+models approaching or even exceeding the performance of commercial models.
+Furthermore, extensive analysis provides key insights into harmonizing
+programmatic logic with its visual expression. Our code and checkpoints will
+are available at https://github.com/InternLM/JanusCoder.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 9. DeepAgent: A General Reasoning Agent with Scalable Toolsets ---
+Link: https://huggingface.co/papers/2510.21618
+
+## Abstract (Original)
+Large reasoning models have demonstrated strong problem-solving abilities,
+yet real-world tasks often require external tools and long-horizon
+interactions. Existing agent frameworks typically follow predefined workflows,
+which limit autonomous and global task completion. In this paper, we introduce
+DeepAgent, an end-to-end deep reasoning agent that performs autonomous
+thinking, tool discovery, and action execution within a single, coherent
+reasoning process. To address the challenges of long-horizon interactions,
+particularly the context length explosion from multiple tool calls and the
+accumulation of interaction history, we introduce an autonomous memory folding
+mechanism that compresses past interactions into structured episodic, working,
+and tool memories, reducing error accumulation while preserving critical
+information. To teach general-purpose tool use efficiently and stably, we
+develop an end-to-end reinforcement learning strategy, namely ToolPO, that
+leverages LLM-simulated APIs and applies tool-call advantage attribution to
+assign fine-grained credit to the tool invocation tokens. Extensive experiments
+on eight benchmarks, including general tool-use tasks (ToolBench, API-Bank,
+TMDB, Spotify, ToolHop) and downstream applications (ALFWorld, WebShop, GAIA,
+HLE), demonstrate that DeepAgent consistently outperforms baselines across both
+labeled-tool and open-set tool retrieval scenarios. This work takes a step
+toward more general and capable agents for real-world applications. The code
+and demo are available at https://github.com/RUC-NLPIR/DeepAgent.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 10. Tongyi DeepResearch Technical Report ---
+Link: https://huggingface.co/papers/2510.24701
+
+## Abstract (Original)
+We present Tongyi DeepResearch, an agentic large language model, which is
+specifically designed for long-horizon, deep information-seeking research
+tasks. To incentivize autonomous deep research agency, Tongyi DeepResearch is
+developed through an end-to-end training framework that combines agentic
+mid-training and agentic post-training, enabling scalable reasoning and
+information seeking across complex tasks. We design a highly scalable data
+synthesis pipeline that is fully automatic, without relying on costly human
+annotation, and empowers all training stages. By constructing customized
+environments for each stage, our system enables stable and consistent
+interactions throughout. Tongyi DeepResearch, featuring 30.5 billion total
+parameters, with only 3.3 billion activated per token, achieves
+state-of-the-art performance across a range of agentic deep research
+benchmarks, including Humanity's Last Exam, BrowseComp, BrowseComp-ZH,
+WebWalkerQA, xbench-DeepSearch, FRAMES and xbench-DeepSearch-2510. We
+open-source the model, framework, and complete solutions to empower the
+community.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
