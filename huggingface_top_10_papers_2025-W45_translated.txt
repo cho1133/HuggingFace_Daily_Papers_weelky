@@ -1,0 +1,287 @@
+Hugging Face 주간 인기 논문 Top 10 (2025-W45) - 번역본
+출처: https://huggingface.co/papers/week/2025-W45
+
+--- 1. Thinking with Video: Video Generation as a Promising Multimodal
+  Reasoning Paradigm ---
+Link: https://huggingface.co/papers/2511.04570
+
+## Abstract (Original)
+"Thinking with Text" and "Thinking with Images" paradigm significantly
+improve the reasoning ability of large language models (LLMs) and Vision
+Language Models (VLMs). However, these paradigms have inherent limitations. (1)
+Images capture only single moments and fail to represent dynamic processes or
+continuous changes, and (2) The separation of text and vision as distinct
+modalities, hindering unified multimodal understanding and generation. To
+overcome these limitations, we introduce "Thinking with Video", a new paradigm
+that leverages video generation models, such as Sora-2, to bridge visual and
+textual reasoning in a unified temporal framework. To support this exploration,
+we developed the Video Thinking Benchmark (VideoThinkBench). VideoThinkBench
+encompasses two task categories: (1) vision-centric tasks (e.g., Eyeballing
+Puzzles), and (2) text-centric tasks (e.g., subsets of GSM8K, MMMU). Our
+evaluation establishes Sora-2 as a capable reasoner. On vision-centric tasks,
+Sora-2 is generally comparable to state-of-the-art (SOTA) VLMs, and even
+surpasses VLMs on several tasks, such as Eyeballing Games. On text-centric
+tasks, Sora-2 achieves 92% accuracy on MATH, and 75.53% accuracy on MMMU.
+Furthermore, we systematically analyse the source of these abilities. We also
+find that self-consistency and in-context learning can improve Sora-2's
+performance. In summary, our findings demonstrate that the video generation
+model is the potential unified multimodal understanding and generation model,
+positions "thinking with video" as a unified multimodal reasoning paradigm.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 2. Diffusion Language Models are Super Data Learners ---
+Link: https://huggingface.co/papers/2511.03276
+
+## Abstract (Original)
+Under strictly controlled pre-training settings, we observe a Crossover: when
+unique data is limited, diffusion language models (DLMs) consistently surpass
+autoregressive (AR) models by training for more epochs. The crossover shifts
+later with more or higher-quality data, earlier with larger models, and
+persists across dense and sparse architectures. We attribute the gains to three
+compounding factors: (1) any-order modeling, (2) super-dense compute from
+iterative bidirectional denoising, and (3) built-in Monte Carlo augmentation;
+input or parameter noise improves AR under data constraint but cannot close the
+gap. At scale, a 1.7B DLM trained with a ~1.5T-token compute budget on 10B
+unique Python tokens overtakes an AR coder trained with strictly matched
+settings. In addition, a 1B-parameter DLM achieves > 56% accuracy on HellaSwag
+and > 33% on MMLU using only 1B tokens, without any special tricks, just by
+repeating standard pre-training data. We also show that rising validation
+cross-entropy does not imply degraded downstream performance in this regime.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 3. VCode: a Multimodal Coding Benchmark with SVG as Symbolic Visual
+  Representation ---
+Link: https://huggingface.co/papers/2511.02778
+
+## Abstract (Original)
+Code has emerged as a precise and executable medium for reasoning and action
+in the agent era. Yet, progress has largely focused on language-centric tasks
+such as program synthesis and debugging, leaving visual-centric coding
+underexplored. Inspired by how humans reason over sketches, we advocate SVG
+code as a compact, interpretable, and executable visual representation. We
+introduce VCode, a benchmark that reframes multimodal understanding as code
+generation: given an image, a model must produce SVG that preserves symbolic
+meaning for downstream reasoning. VCode covers three domains - general
+commonsense (MM-Vet), professional disciplines (MMMU), and visual-centric
+perception (CV-Bench). To assess symbolic fidelity, we propose CodeVQA, a novel
+evaluation protocol in which a policy model answers questions over rendered
+SVGs; correct answers indicate faithful symbolic preservation. Empirically,
+frontier VLMs struggle to generate faithful SVGs, revealing a persistent gap
+between language-centric and visual-centric coding. To close this gap, we
+introduce VCoder, an agentic framework that augments VLMs along two axes: (i)
+Thinking with Revision, which iteratively analyzes discrepancies and refines
+SVG code; and (ii) Acting with Visual Tools, where detectors and parsers supply
+structured cues such as objects, shapes, and text beyond the model's intrinsic
+capacity. Across benchmarks, frontier VLMs with strong reasoning capabilities
+score well overall yet remain limited in professional knowledge and 3D
+reasoning. VCoder delivers a 12.3-point overall gain over the top-performing
+Claude-4-Opus. Human studies show that both humans and VLMs perform worse on
+rendered SVGs, their consistency reveals the promise of symbolic visual
+representation. The benchmark and code are available at
+https://github.com/CSU-JPG/VCode.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 4. V-Thinker: Interactive Thinking with Images ---
+Link: https://huggingface.co/papers/2511.04460
+
+## Abstract (Original)
+Empowering Large Multimodal Models (LMMs) to deeply integrate image
+interaction with long-horizon reasoning capabilities remains a long-standing
+challenge in this field. Recent advances in vision-centric reasoning explore a
+promising "Thinking with Images" paradigm for LMMs, marking a shift from
+image-assisted reasoning to image-interactive thinking. While this milestone
+enables models to focus on fine-grained image regions, progress remains
+constrained by limited visual tool spaces and task-specific workflow designs.
+To bridge this gap, we present V-Thinker, a general-purpose multimodal
+reasoning assistant that enables interactive, vision-centric thinking through
+end-to-end reinforcement learning. V-Thinker comprises two key components: (1)
+a Data Evolution Flywheel that automatically synthesizes, evolves, and verifies
+interactive reasoning datasets across three dimensions-diversity, quality, and
+difficulty; and (2) a Visual Progressive Training Curriculum that first aligns
+perception via point-level supervision, then integrates interactive reasoning
+through a two-stage reinforcement learning framework. Furthermore, we introduce
+VTBench, an expert-verified benchmark targeting vision-centric interactive
+reasoning tasks. Extensive experiments demonstrate that V-Thinker consistently
+outperforms strong LMM-based baselines in both general and interactive
+reasoning scenarios, providing valuable insights for advancing
+image-interactive reasoning applications.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 5. Don't Blind Your VLA: Aligning Visual Representations for OOD
+  Generalization ---
+Link: https://huggingface.co/papers/2510.25616
+
+## Abstract (Original)
+The growing success of Vision-Language-Action (VLA) models stems from the
+promise that pretrained Vision-Language Models (VLMs) can endow agents with
+transferable world knowledge and vision-language (VL) grounding, laying a
+foundation for action models with broader generalization. Yet when these VLMs
+are adapted to the action modality, it remains unclear to what extent their
+original VL representations and knowledge are preserved. In this work, we
+conduct a systematic study of representation retention during VLA fine-tuning,
+showing that naive action fine-tuning leads to degradation of visual
+representations. To characterize and measure these effects, we probe VLA's
+hidden representations and analyze attention maps, further, we design a set of
+targeted tasks and methods that contrast VLA models with their counterpart
+VLMs, isolating changes in VL capabilities induced by action fine-tuning. We
+further evaluate a range of strategies for aligning visual representations and
+introduce a simple yet effective method that mitigates degradation and yields
+improved generalization to out-of-distribution (OOD) scenarios. Taken together,
+our analysis clarifies the trade-off between action fine-tuning and the
+degradation of VL representations and highlights practical approaches to
+recover inherited VL capabilities. Code is publicly available:
+https://blind-vla-paper.github.io
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 6. Every Activation Boosted: Scaling General Reasoner to 1 Trillion Open
+  Language Foundation ---
+Link: https://huggingface.co/papers/2510.22115
+
+## Abstract (Original)
+We introduce Ling 2.0, a series reasoning-oriented language foundation built
+upon the principle that every activation boosts reasoning capability. Designed
+to scale from tens of billions to one trillion parameters under a unified
+Mixture-of-Experts (MoE) paradigm, Ling 2.0 emphasizes high sparsity,
+cross-scale consistency, and efficiency guided by empirical scaling laws. The
+series includes three non-thinking (instruct) models - Ling-mini-2.0,
+Ling-flash-2.0, and Ling-1T - ranging from 16B to 1T total parameters and
+achieving up to 7-fold active-compute efficiency compared with dense
+counterparts. Ling 2.0 integrates coordinated innovations across model
+architecture, pre-training, post-training, and infrastructure: a high-sparsity
+MoE with MTP for efficient reasoning, reasoning-oriented data and mid-training
+CoT activation, reinforcement-based fine-tuning (DFT, Evo-CoT), and full-scale
+FP8 training with fine-grained heterogeneous pipelines. At the trillion scale,
+Ling-1T establishes a new Pareto frontier of reasoning accuracy versus
+computational efficiency, demonstrating that sparse activation, when properly
+aligned with reasoning objectives, enables scalable and efficient intelligence.
+Collectively, Ling 2.0 provides a coherent, open, and efficient foundation for
+advancing future reasoning and thinking models, including the Ring series built
+upon the same base.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 7. ThinkMorph: Emergent Properties in Multimodal Interleaved
+  Chain-of-Thought Reasoning ---
+Link: https://huggingface.co/papers/2510.27492
+
+## Abstract (Original)
+Multimodal reasoning requires iterative coordination between language and
+vision, yet it remains unclear what constitutes a meaningful interleaved chain
+of thought. We posit that text and image thoughts should function as
+complementary, rather than isomorphic, modalities that mutually advance
+reasoning. Guided by this principle, we build ThinkMorph, a unified model
+fine-tuned on 24K high-quality interleaved reasoning traces spanning tasks with
+varying visual engagement. ThinkMorph learns to generate progressive text-image
+reasoning steps that concretely manipulate visual content while maintaining
+coherent verbal logic. It delivers large gains on vision-centric benchmarks
+(averaging 34.7% over the base model) and generalizes to out-of-domain tasks,
+matching or surpassing larger and proprietary VLMs. Beyond performance,
+ThinkMorph exhibits emergent multimodal intelligence, including unseen visual
+manipulation skills, adaptive switching between reasoning modes, and better
+test-time scaling through diversified multimodal thoughts.These findings
+suggest promising directions for characterizing the emergent capabilities of
+unified models for multimodal reasoning.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 8. Scaling Agent Learning via Experience Synthesis ---
+Link: https://huggingface.co/papers/2511.03773
+
+## Abstract (Original)
+While reinforcement learning (RL) can empower large language model (LLM)
+agents by enabling self-improvement through interaction, its practical adoption
+remains challenging due to costly rollouts, limited task diversity, unreliable
+reward signals, and infrastructure complexity, all of which obstruct the
+collection of scalable experience data. To address these challenges, we
+introduce DreamGym, the first unified framework designed to synthesize diverse
+experiences with scalability in mind to enable effective online RL training for
+autonomous agents. Rather than relying on expensive real-environment rollouts,
+DreamGym distills environment dynamics into a reasoning-based experience model
+that derives consistent state transitions and feedback signals through
+step-by-step reasoning, enabling scalable agent rollout collection for RL. To
+improve the stability and quality of transitions, DreamGym leverages an
+experience replay buffer initialized with offline real-world data and
+continuously enriched with fresh interactions to actively support agent
+training. To improve knowledge acquisition, DreamGym adaptively generates new
+tasks that challenge the current agent policy, enabling more effective online
+curriculum learning. Experiments across diverse environments and agent
+backbones demonstrate that DreamGym substantially improves RL training, both in
+fully synthetic settings and in sim-to-real transfer scenarios. On non-RL-ready
+tasks like WebArena, DreamGym outperforms all baselines by over 30%. And in
+RL-ready but costly settings, it matches GRPO and PPO performance using only
+synthetic interactions. When transferring a policy trained purely on synthetic
+experiences to real-environment RL, DreamGym yields significant additional
+performance gains while requiring far fewer real-world interactions, providing
+a scalable warm-start strategy for general-purpose RL.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 9. OS-Sentinel: Towards Safety-Enhanced Mobile GUI Agents via Hybrid
+  Validation in Realistic Workflows ---
+Link: https://huggingface.co/papers/2510.24411
+
+## Abstract (Original)
+Computer-using agents powered by Vision-Language Models (VLMs) have
+demonstrated human-like capabilities in operating digital environments like
+mobile platforms. While these agents hold great promise for advancing digital
+automation, their potential for unsafe operations, such as system compromise
+and privacy leakage, is raising significant concerns. Detecting these safety
+concerns across the vast and complex operational space of mobile environments
+presents a formidable challenge that remains critically underexplored. To
+establish a foundation for mobile agent safety research, we introduce
+MobileRisk-Live, a dynamic sandbox environment accompanied by a safety
+detection benchmark comprising realistic trajectories with fine-grained
+annotations. Built upon this, we propose OS-Sentinel, a novel hybrid safety
+detection framework that synergistically combines a Formal Verifier for
+detecting explicit system-level violations with a VLM-based Contextual Judge
+for assessing contextual risks and agent actions. Experiments show that
+OS-Sentinel achieves 10%-30% improvements over existing approaches across
+multiple metrics. Further analysis provides critical insights that foster the
+development of safer and more reliable autonomous mobile agents.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 10. INT v.s. FP: A Comprehensive Study of Fine-Grained Low-bit Quantization
+  Formats ---
+Link: https://huggingface.co/papers/2510.25602
+
+## Abstract (Original)
+Modern AI hardware, such as Nvidia's Blackwell architecture, is increasingly
+embracing low-precision floating-point (FP) formats to handle the pervasive
+activation outliers in Large Language Models (LLMs). Despite this industry
+trend, a unified comparison of FP and integer (INT) quantization across varying
+granularities has been missing, leaving algorithm and hardware co-design
+without clear guidance. This paper fills that gap by systematically
+investigating the trade-offs between FP and INT formats. We reveal a critical
+performance crossover: while FP excels in coarse-grained quantization, the
+comparison at fine-grained (block-wise) levels is more nuanced. Our
+comprehensive comparison demonstrates that for popular 8-bit fine-grained
+formats (e.g., MX with block size 32), MXINT8 is superior to its FP counterpart
+in both algorithmic accuracy and hardware efficiency. However, for 4-bit
+formats, FP (e.g., MXFP4, NVFP4) often holds an accuracy advantage , though we
+show that NVINT4 can surpass NVFP4 when outlier-mitigation techniques like
+Hadamard rotation are applied. We also introduce a symmetric clipping method
+that resolves gradient bias in fine-grained low-bit INT training, enabling
+nearly lossless performance for MXINT8 training. These findings challenge the
+current hardware trajectory, demonstrating that a one-size-fits-all FP approach
+is suboptimal and advocating that fine-grained INT formats, particularly
+MXINT8, offer a better balance of accuracy, power, and efficiency for future AI
+accelerators.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
