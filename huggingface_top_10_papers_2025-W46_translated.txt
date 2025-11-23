@@ -1,0 +1,172 @@
+Hugging Face 주간 인기 논문 Top 10 (2025-W46) - 번역본
+출처: https://huggingface.co/papers/week/2025-W46
+
+--- 1. Lumine: An Open Recipe for Building Generalist Agents in 3D Open Worlds ---
+Link: https://huggingface.co/papers/2511.08892
+
+## Abstract (Original)
+We introduce Lumine, the first open recipe for developing generalist agents capable of completing hours-long complex missions in real time within challenging 3D open-world environments. Lumine adopts a human-like interaction paradigm that unifies perception, reasoning, and action in an end-to-end manner, powered by a vision-language model. It processes raw pixels at 5 Hz to produce precise 30 Hz keyboard-mouse actions and adaptively invokes reasoning only when necessary. Trained in Genshin Impact, Lumine successfully completes the entire five-hour Mondstadt main storyline on par with human-level efficiency and follows natural language instructions to perform a broad spectrum of tasks in both 3D open-world exploration and 2D GUI manipulation across collection, combat, puzzle-solving, and NPC interaction. In addition to its in-domain performance, Lumine demonstrates strong zero-shot cross-game generalization. Without any fine-tuning, it accomplishes 100-minute missions in Wuthering Waves and the full five-hour first chapter of Honkai: Star Rail. These promising results highlight Lumine's effectiveness across distinct worlds and interaction dynamics, marking a concrete step toward generalist agents in open-ended environments.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 2. Tiny Model, Big Logic: Diversity-Driven Optimization Elicits Large-Model
+  Reasoning Ability in VibeThinker-1.5B ---
+Link: https://huggingface.co/papers/2511.06221
+
+## Abstract (Original)
+Challenging the prevailing consensus that small models inherently lack robust
+reasoning, this report introduces VibeThinker-1.5B, a 1.5B-parameter dense
+model developed via our Spectrum-to-Signal Principle (SSP). This challenges the
+prevailing approach of scaling model parameters to enhance capabilities, as
+seen in models like DeepSeek R1 (671B) and Kimi k2 (>1T). The SSP framework
+first employs a Two-Stage Diversity-Exploring Distillation (SFT) to generate a
+broad spectrum of solutions, followed by MaxEnt-Guided Policy Optimization (RL)
+to amplify the correct signal. With a total training cost of only $7,800,
+VibeThinker-1.5B demonstrates superior reasoning capabilities compared to
+closed-source models like Magistral Medium and Claude Opus 4, and performs on
+par with open-source models like GPT OSS-20B Medium. Remarkably, it surpasses
+the 400x larger DeepSeek R1 on three math benchmarks: AIME24 (80.3 vs. 79.8),
+AIME25 (74.4 vs. 70.0), and HMMT25 (50.4 vs. 41.7). This is a substantial
+improvement over its base model (6.7, 4.3, and 0.6, respectively). On
+LiveCodeBench V6, it scores 51.1, outperforming Magistral Medium's 50.3 and its
+base model's 0.0. These findings demonstrate that small models can achieve
+reasoning capabilities comparable to large models, drastically reducing
+training and inference costs and thereby democratizing advanced AI research.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 3. One Small Step in Latent, One Giant Leap for Pixels: Fast Latent Upscale Adapter for Your Diffusion Models ---
+Link: https://huggingface.co/papers/2511.10629
+
+## Abstract (Original)
+Diffusion models struggle to scale beyond their training resolutions, as direct high-resolution sampling is slow and costly, while post-hoc image super-resolution (ISR) introduces artifacts and additional latency by operating after decoding. We present the Latent Upscaler Adapter (LUA), a lightweight module that performs super-resolution directly on the generator's latent code before the final VAE decoding step. LUA integrates as a drop-in component, requiring no modifications to the base model or additional diffusion stages, and enables high-resolution synthesis through a single feed-forward pass in latent space. A shared Swin-style backbone with scale-specific pixel-shuffle heads supports 2x and 4x factors and remains compatible with image-space SR baselines, achieving comparable perceptual quality with nearly 3x lower decoding and upscaling time (adding only +0.42 s for 1024 px generation from 512 px, compared to 1.87 s for pixel-space SR using the same SwinIR architecture). Furthermore, LUA shows strong generalization across the latent spaces of different VAEs, making it easy to deploy without retraining from scratch for each new decoder. Extensive experiments demonstrate that LUA closely matches the fidelity of native high-resolution generation while offering a practical and efficient path to scalable, high-fidelity image synthesis in modern diffusion pipelines.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 4. Grounding Computer Use Agents on Human Demonstrations ---
+Link: https://huggingface.co/papers/2511.07332
+
+## Abstract (Original)
+Building reliable computer-use agents requires grounding: accurately
+connecting natural language instructions to the correct on-screen elements.
+While large datasets exist for web and mobile interactions, high-quality
+resources for desktop environments are limited. To address this gap, we
+introduce GroundCUA, a large-scale desktop grounding dataset built from expert
+human demonstrations. It covers 87 applications across 12 categories and
+includes 56K screenshots, with every on-screen element carefully annotated for
+a total of over 3.56M human-verified annotations. From these demonstrations, we
+generate diverse instructions that capture a wide range of real-world tasks,
+providing high-quality data for model training. Using GroundCUA, we develop the
+GroundNext family of models that map instructions to their target UI elements.
+At both 3B and 7B scales, GroundNext achieves state-of-the-art results across
+five benchmarks using supervised fine-tuning, while requiring less than
+one-tenth the training data of prior work. Reinforcement learning post-training
+further improves performance, and when evaluated in an agentic setting on the
+OSWorld benchmark using o3 as planner, GroundNext attains comparable or
+superior results to models trained with substantially more data,. These results
+demonstrate the critical role of high-quality, expert-driven datasets in
+advancing general-purpose computer-use agents.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 5. TiDAR: Think in Diffusion, Talk in Autoregression ---
+Link: https://huggingface.co/papers/2511.08923
+
+## Abstract (Original)
+Diffusion language models hold the promise of fast parallel generation, while autoregressive (AR) models typically excel in quality due to their causal structure aligning naturally with language modeling. This raises a fundamental question: can we achieve a synergy with high throughput, higher GPU utilization, and AR level quality? Existing methods fail to effectively balance these two aspects, either prioritizing AR using a weaker model for sequential drafting (speculative decoding), leading to lower drafting efficiency, or using some form of left-to-right (AR-like) decoding logic for diffusion, which still suffers from quality degradation and forfeits its potential parallelizability. We introduce TiDAR, a sequence-level hybrid architecture that drafts tokens (Thinking) in Diffusion and samples final outputs (Talking) AutoRegressively - all within a single forward pass using specially designed structured attention masks. This design exploits the free GPU compute density, achieving a strong balance between drafting and verification capacity. Moreover, TiDAR is designed to be serving-friendly (low overhead) as a standalone model. We extensively evaluate TiDAR against AR models, speculative decoding, and diffusion variants across generative and likelihood tasks at 1.5B and 8B scales. Thanks to the parallel drafting and sampling as well as exact KV cache support, TiDAR outperforms speculative decoding in measured throughput and surpasses diffusion models like Dream and Llada in both efficiency and quality. Most notably, TiDAR is the first architecture to close the quality gap with AR models while delivering 4.71x to 5.91x more tokens per second.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 6. HaluMem: Evaluating Hallucinations in Memory Systems of Agents ---
+Link: https://huggingface.co/papers/2511.03506
+
+## Abstract (Original)
+Memory systems are key components that enable AI systems such as LLMs and AI
+agents to achieve long-term learning and sustained interaction. However, during
+memory storage and retrieval, these systems frequently exhibit memory
+hallucinations, including fabrication, errors, conflicts, and omissions.
+Existing evaluations of memory hallucinations are primarily end-to-end question
+answering, which makes it difficult to localize the operational stage within
+the memory system where hallucinations arise. To address this, we introduce the
+Hallucination in Memory Benchmark (HaluMem), the first operation level
+hallucination evaluation benchmark tailored to memory systems. HaluMem defines
+three evaluation tasks (memory extraction, memory updating, and memory question
+answering) to comprehensively reveal hallucination behaviors across different
+operational stages of interaction. To support evaluation, we construct
+user-centric, multi-turn human-AI interaction datasets, HaluMem-Medium and
+HaluMem-Long. Both include about 15k memory points and 3.5k multi-type
+questions. The average dialogue length per user reaches 1.5k and 2.6k turns,
+with context lengths exceeding 1M tokens, enabling evaluation of hallucinations
+across different context scales and task complexities. Empirical studies based
+on HaluMem show that existing memory systems tend to generate and accumulate
+hallucinations during the extraction and updating stages, which subsequently
+propagate errors to the question answering stage. Future research should focus
+on developing interpretable and constrained memory operation mechanisms that
+systematically suppress hallucinations and improve memory reliability.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 7. Depth Anything 3: Recovering the Visual Space from Any Views ---
+Link: https://huggingface.co/papers/2511.10647
+
+## Abstract (Original)
+We present Depth Anything 3 (DA3), a model that predicts spatially consistent geometry from an arbitrary number of visual inputs, with or without known camera poses. In pursuit of minimal modeling, DA3 yields two key insights: a single plain transformer (e.g., vanilla DINO encoder) is sufficient as a backbone without architectural specialization, and a singular depth-ray prediction target obviates the need for complex multi-task learning. Through our teacher-student training paradigm, the model achieves a level of detail and generalization on par with Depth Anything 2 (DA2). We establish a new visual geometry benchmark covering camera pose estimation, any-view geometry and visual rendering. On this benchmark, DA3 sets a new state-of-the-art across all tasks, surpassing prior SOTA VGGT by an average of 44.3% in camera pose accuracy and 25.1% in geometric accuracy. Moreover, it outperforms DA2 in monocular depth estimation. All models are trained exclusively on public academic datasets.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 8. IterResearch: Rethinking Long-Horizon Agents via Markovian State
+  Reconstruction ---
+Link: https://huggingface.co/papers/2511.07327
+
+## Abstract (Original)
+Recent advances in deep-research agents have shown promise for autonomous
+knowledge construction through dynamic reasoning over external sources.
+However, existing approaches rely on a mono-contextual paradigm that
+accumulates all information in a single, expanding context window, leading to
+context suffocation and noise contamination that limit their effectiveness on
+long-horizon tasks. We introduce IterResearch, a novel iterative deep-research
+paradigm that reformulates long-horizon research as a Markov Decision Process
+with strategic workspace reconstruction. By maintaining an evolving report as
+memory and periodically synthesizing insights, our approach preserves
+consistent reasoning capacity across arbitrary exploration depths. We further
+develop Efficiency-Aware Policy Optimization (EAPO), a reinforcement learning
+framework that incentivizes efficient exploration through geometric reward
+discounting and enables stable distributed training via adaptive downsampling.
+Extensive experiments demonstrate that IterResearch achieves substantial
+improvements over existing open-source agents with average +14.5pp across six
+benchmarks and narrows the gap with frontier proprietary systems. Remarkably,
+our paradigm exhibits unprecedented interaction scaling, extending to 2048
+interactions with dramatic performance gains (from 3.5\% to 42.5\%), and serves
+as an effective prompting strategy, improving frontier models by up to 19.2pp
+over ReAct on long-horizon tasks. These findings position IterResearch as a
+versatile solution for long-horizon reasoning, effective both as a trained
+agent and as a prompting paradigm for frontier models.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 9. PAN: A World Model for General, Interactable, and Long-Horizon World Simulation ---
+Link: https://huggingface.co/papers/2511.09057
+
+## Abstract (Original)
+A world model enables an intelligent agent to imagine, predict, and reason about how the world evolves in response to its actions, and accordingly to plan and strategize. While recent video generation models produce realistic visual sequences, they typically operate in the prompt-to-full-video manner without causal control, interactivity, or long-horizon consistency required for purposeful reasoning. Existing world modeling efforts, on the other hand, often focus on restricted domains (e.g., physical, game, or 3D-scene dynamics) with limited depth and controllability, and struggle to generalize across diverse environments and interaction formats. In this work, we introduce PAN, a general, interactable, and long-horizon world model that predicts future world states through high-quality video simulation conditioned on history and natural language actions. PAN employs the Generative Latent Prediction (GLP) architecture that combines an autoregressive latent dynamics backbone based on a large language model (LLM), which grounds simulation in extensive text-based knowledge and enables conditioning on language-specified actions, with a video diffusion decoder that reconstructs perceptually detailed and temporally coherent visual observations, to achieve a unification between latent space reasoning (imagination) and realizable world dynamics (reality). Trained on large-scale video-action pairs spanning diverse domains, PAN supports open-domain, action-conditioned simulation with coherent, long-term dynamics. Extensive experiments show that PAN achieves strong performance in action-conditioned world simulation, long-horizon forecasting, and simulative reasoning compared to other video generators and world models, taking a step towards general world models that enable predictive simulation of future world states for reasoning and acting.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 10. MADD: Multi-Agent Drug Discovery Orchestra ---
+Link: https://huggingface.co/papers/2511.08217
+
+## Abstract (Original)
+Hit identification is a central challenge in early drug discovery, traditionally requiring substantial experimental resources. Recent advances in artificial intelligence, particularly large language models (LLMs), have enabled virtual screening methods that reduce costs and improve efficiency. However, the growing complexity of these tools has limited their accessibility to wet-lab researchers. Multi-agent systems offer a promising solution by combining the interpretability of LLMs with the precision of specialized models and tools. In this work, we present MADD, a multi-agent system that builds and executes customized hit identification pipelines from natural language queries. MADD employs four coordinated agents to handle key subtasks in de novo compound generation and screening. We evaluate MADD across seven drug discovery cases and demonstrate its superior performance compared to existing LLM-based solutions. Using MADD, we pioneer the application of AI-first drug design to five biological targets and release the identified hit molecules. Finally, we introduce a new benchmark of query-molecule pairs and docking scores for over three million compounds to contribute to the agentic future of drug design.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
