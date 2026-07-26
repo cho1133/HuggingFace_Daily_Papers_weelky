@@ -37,11 +37,11 @@ Reinforcement learning with verifiable rewards (RLVR) is a powerful recipe for i
 ## 초록 (Korean)
 번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
 
---- 5. Boogu-Image-0.1: Boosting Open-Source Unified Multimodal Understanding and Generation ---
+--- 5. Boogu-Image-0.1: Boosting Open Agentic Multimodal Generation via Understanding under a Minimal Budget ---
 Link: https://huggingface.co/papers/2607.13125
 
 ## Abstract (Original)
-We introduce Boogu-Image-0.1, an open-source unified multimodal understanding and generation model family, comprising Base, Turbo, Edit, and Edit-Turbo variants. It delivers competitive performance in high-quality text-to-image generation, fast inference, instruction-based editing, and bilingual (Chinese-English) text rendering. Closed-source multimodal systems like Nano-Banana-Pro and GPT-Image-2 achieve strong performance through system-level integration rather than a single model, yet their internal practices remain largely undisclosed. In this work, we demonstrate that targeted improvements in model understanding, data quality, and training pipelines, coupled with agentic inference-time scaling, can substantially enhance generation and editing performance even under highly constrained compute budgets. Comprehensive evaluations show that Boogu-Image-0.1 consistently matches or surpasses other open-source models across standard benchmarks, and achieves results approaching leading closed-source systems. Notably, this is accomplished with only 208.62 million unique images. The base model's theoretical training cost is only approximately \$400K. We share practical discussions that we believe are valuable to the broader research community, and release weights, code, and recipes under Apache 2.0 to advance the open ecosystem for unified multimodal understanding and generation. Our code is available here: https://github.com/Boogu-Project/Boogu-Image.
+We introduce Boogu-Image-0.1, an open-source unified multimodal understanding and generation model family, comprising Base, Turbo, Edit, and Edit-Turbo variants. It delivers competitive performance in high-quality text-to-image generation, fast inference, instruction-based editing, and bilingual (Chinese-English) text rendering. Closed-source multimodal systems like Nano-Banana-Pro and GPT-Image-2 achieve strong performance through system-level integration rather than a single model, yet their internal practices remain largely undisclosed. In this work, we demonstrate that strengthening the understanding capability of the system, through a stronger multimodal encoder, agentic prompt rewriting, and related techniques, together with improvements in data quality, training pipelines, and agentic inference-time scaling, can substantially enhance generation and editing performance even under highly constrained compute budgets. Comprehensive evaluations show that Boogu-Image-0.1 consistently matches or surpasses other open-source models across standard benchmarks, and achieves results approaching leading closed-source systems. Notably, this is accomplished with only 208.62 million unique images. The base model's theoretical training cost is only approximately \$400K. We share practical discussions that we believe are valuable to the broader research community, and release weights, code, and recipes under Apache 2.0 to advance the open ecosystem for unified multimodal understanding and generation. Our code is available here: https://github.com/Boogu-Project/Boogu-Image.
 
 ## 초록 (Korean)
 번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
@@ -55,7 +55,16 @@ Coding agents must integrate external tool returns into ongoing reasoning - a ca
 ## 초록 (Korean)
 번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
 
---- 7. ABot-N1: Toward a General Visual Language Navigation Foundation Model ---
+--- 7. SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning ---
+Link: https://huggingface.co/papers/2607.14777
+
+## Abstract (Original)
+Large language models are increasingly trained as interactive agents for long-horizon tasks involving multi-turn interaction, tool use, and environment feedback. Outcome-based reinforcement learning (RL) provides a practical optimization paradigm, but its sparse trajectory-level rewards offer limited guidance on intermediate decisions, leaving a supervision gap between episode-level outcomes and token-level policy learning. We propose SEED (SElf-Evolving On-Policy Distillation), a self-evolving framework that converts completed on-policy trajectories into training-time hindsight skills and distills their behavioral effect back into the policy model. SEED first fine-tunes the policy to analyze completed trajectories and generate natural-language skills that capture reusable workflows, decisive observations, or failure-avoidance rules. During RL, the current policy both collects trajectories and serves as the analyzer that extracts hindsight skills from them. Policy updates therefore improve subsequent decision making and skill analysis together, allowing hindsight supervision to evolve with the policy. SEED then re-scores the sampled actions under ordinary and skill-augmented contexts, converting the skill-induced probability shift into a dense token-level on-policy distillation signal. This signal is jointly optimized with outcome-based RL, keeping the auxiliary supervision aligned with the current trajectory distribution. Extensive experiments on text-based and vision-based agentic tasks show that SEED consistently improves performance and sample efficiency, exhibiting robust generalization to unseen scenarios. Our code is available at https://github.com/jinyangwu/SEED.
+
+## 초록 (Korean)
+번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
+
+--- 8. ABot-N1: Toward a General Visual Language Navigation Foundation Model ---
 Link: https://huggingface.co/papers/2607.10383
 
 ## Abstract (Original)
@@ -64,20 +73,11 @@ Visual Language Navigation foundation models aim to unify deep reasoning for gro
 ## 초록 (Korean)
 번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
 
---- 8. Ring-Zero: Scaling Zero RL to a Trillion Parameters for Emergent Reasoning ---
+--- 9. Ring-Zero: Scaling Zero RL to a Trillion Parameters for Emergent Reasoning ---
 Link: https://huggingface.co/papers/2607.12395
 
 ## Abstract (Original)
 Reinforcement learning with verifiable rewards without human-annotated data, often referred to as zero RL, has emerged as a powerful paradigm for eliciting chain-of-thought reasoning. However, due to computational constraints, existing studies are largely restricted to small models, leaving the training dynamics and emergent capabilities at a large scale unexplored. To meaningfully explore this frontier, we aim to elicit high-quality reasoning behaviors from the model. However, we find that naive scaling often suffers from poor readability, token redundancy, and a lack of adaptive reasoning depth. To address these challenges, we present a stable and efficient training pipeline, incorporating algorithmic and system optimizations such as clipped importance sampling, training-inference ratio correction, and mixed-precision control. Our experiments offer three key findings that validate the "bitter lesson" of scaling: (1) scaling to 1T parameters significantly enhances sample efficiency and performance ceilings; (2) the training process progresses sequentially through an initial discovery phase followed by a sharpening phase; and (3) the model spontaneously develops advanced cognitive behaviors, including anthropomorphism, structured formatting, self-verification, parallel reasoning, and context anxiety, rendering hand-crafted heuristics redundant. Evaluated on seven mathematical benchmarks, Ring-2.5-1T-Zero achieves competitive performance. Additionally, to assess CoT quality beyond final-answer correctness, we propose a structured evaluation framework across three dimensions: comprehensibility, reproducibility, and efficiency, where our model demonstrates clear advantages in producing structured and concise reasoning traces. By sharing our observed emergent phenomena, we hope to provide the community with deeper insights into scaling behaviors, particularly at the 1-trillion scale.
-
-## 초록 (Korean)
-번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
-
---- 9. SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning ---
-Link: https://huggingface.co/papers/2607.14777
-
-## Abstract (Original)
-Large language models are increasingly trained as interactive agents for long-horizon tasks involving multi-turn interaction, tool use, and environment feedback. Outcome-based reinforcement learning (RL) provides a practical optimization paradigm, but its sparse trajectory-level rewards offer limited guidance on intermediate decisions, leaving a supervision gap between episode-level outcomes and token-level policy learning. We propose SEED (SElf-Evolving On-Policy Distillation), a self-evolving framework that converts completed on-policy trajectories into training-time hindsight skills and distills their behavioral effect back into the policy model. SEED first fine-tunes the policy to analyze completed trajectories and generate natural-language skills that capture reusable workflows, decisive observations, or failure-avoidance rules. During RL, the current policy both collects trajectories and serves as the analyzer that extracts hindsight skills from them. Policy updates therefore improve subsequent decision making and skill analysis together, allowing hindsight supervision to evolve with the policy. SEED then re-scores the sampled actions under ordinary and skill-augmented contexts, converting the skill-induced probability shift into a dense token-level on-policy distillation signal. This signal is jointly optimized with outcome-based RL, keeping the auxiliary supervision aligned with the current trajectory distribution. Extensive experiments on text-based and vision-based agentic tasks show that SEED consistently improves performance and sample efficiency, exhibiting robust generalization to unseen scenarios. Our code is available at https://github.com/jinyangwu/SEED.
 
 ## 초록 (Korean)
 번역 중 오류 발생: 3번의 시도 후에도 네트워크 연결에 실패했습니다.
